@@ -1,4 +1,4 @@
-NAME 		= so_long
+NAME 		= cub3d
 
 CC 			= cc
 RM			= rm -f
