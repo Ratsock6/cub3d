@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/13 18:49:57 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/14 17:24:48 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,29 @@ typedef struct s_map
 	int			weith;
 }				t_map;
 
+typedef struct s_rgb
+{
+	int	r;
+	int	g;
+	int	b;
+}		t_rgb;
+
 typedef struct s_texture
 {
+	char			*path_north;
 	mlx_texture_t	*north;
 	mlx_image_t		*img_north;
+	char			*path_south;
 	mlx_texture_t	*south;
 	mlx_image_t		*img_south;
+	char			*path_east;
 	mlx_texture_t	*east;
 	mlx_image_t		*img_east;
+	char			*path_west;
 	mlx_texture_t	*west;
 	mlx_image_t		*img_west;
+	t_rgb			*floor;
+	t_rgb			*celling;
 }		t_texture;
 
 typedef struct s_core
@@ -50,9 +63,14 @@ typedef struct s_core
 	t_texture	*img;
 }				t_core;
 
+//PARSING
+int		check_error(int argc, char **argv);
+int		init(t_core *core, char **argv);
+int		parsing_data(t_core *core);
+int		parsing_map(t_core *core);
 
-int		check_error(int argc, char **argv, t_core *core);
-int		init(t_core *core);
+// UTILS
 int		ft_puterror(char *error);
+size_t  ft_len_tab(char **str_tab);
 
 #endif

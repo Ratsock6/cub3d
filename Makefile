@@ -14,7 +14,11 @@ LIBFT		= $(FT)/libft.a
 
 SRC 		= src/main.c \
 				src/parsing/error.c \
-				src/parsing/init.c
+				src/parsing/parsing_data.c \
+				src/parsing/parsing_map.c \
+				src/parsing/init.c \
+				src/utils/ft_puterror.c \
+				src/utils/ft_len_tab.c
 OBJ 		= $(SRC:.c=.o)
 
 all: $(NAME)

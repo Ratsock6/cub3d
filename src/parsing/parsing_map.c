@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   parsing_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 15:09:46 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/14 12:07:52 by aallou-v         ###   ########.fr       */
+/*   Created: 2024/05/14 16:24:47 by aallou-v          #+#    #+#             */
+/*   Updated: 2024/05/14 16:26:13 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int	check_error(int argc, char **argv)
+int	parsing_map(t_core *core)
 {
-	if (argc != 2)
-		return (ft_puterror("./cub3d <map>"));
-	if (ft_strchr(argv[1], '.') == NULL
-		|| ft_strcmp(ft_strchr(argv[1], '.'), ".cub") != 0)
-		return (ft_puterror("The file is not a .cub"));
+	(void) core;
 	return (0);
 }

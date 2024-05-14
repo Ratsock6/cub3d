@@ -1,23 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   error.c                                            :+:      :+:    :+:   */
+/*   ft_puterror.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/13 15:09:46 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/14 12:07:52 by aallou-v         ###   ########.fr       */
+/*   Created: 2024/05/14 12:04:37 by aallou-v          #+#    #+#             */
+/*   Updated: 2024/05/14 12:07:06 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-int	check_error(int argc, char **argv)
+int	ft_puterror(char *error)
 {
-	if (argc != 2)
-		return (ft_puterror("./cub3d <map>"));
-	if (ft_strchr(argv[1], '.') == NULL
-		|| ft_strcmp(ft_strchr(argv[1], '.'), ".cub") != 0)
-		return (ft_puterror("The file is not a .cub"));
-	return (0);
+	ft_putendl_fd("\033[38;2;247;59;25;1mERROR", 2);
+	ft_putstr_fd(error, 2);
+	ft_putendl_fd("\033[0m", 2);
+	return (1);
 }
