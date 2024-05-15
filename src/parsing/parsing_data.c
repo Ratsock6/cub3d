@@ -6,13 +6,13 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:30:12 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/14 17:40:36 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:47:25 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-static void rgb(t_rgb *rgb, char **values)
+static void	rgb(t_rgb *rgb, char **values)
 {
 	rgb->r = ft_atoi(values[0]);
 	rgb->g = ft_atoi(values[1]);
@@ -26,7 +26,7 @@ static void	reform(char *str, bool new_line)
 	int	j;
 
 	if (str == NULL)
-		return;
+		return ;
 	len = ft_strlen(str);
 	if (new_line)
 		str[len - 1] = '\0';
@@ -34,7 +34,7 @@ static void	reform(char *str, bool new_line)
 	while (++i < len)
 	{
 		if (str[i] != ' ')
-			break;
+			break ;
 	}
 	if (i > 0)
 	{
@@ -116,17 +116,17 @@ int	parsing_data(t_core *core)
 	{
 		line = get_next_line(core->map->fd);
 		if (line == NULL)
-			break;
+			break ;
 		if (ft_isonly(line, "\n"))
 		{
 			free(line);
-			continue;
+			continue ;
 		}
 		if (put_value(line, core))
 			return (1);
 		i++;
 		if (i > 5)
-			break;
- 	}
+			break ;
+	}
 	return (0);
 }

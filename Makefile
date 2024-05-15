@@ -17,6 +17,7 @@ SRC 		= src/main.c \
 				src/parsing/parsing_data.c \
 				src/parsing/parsing_map.c \
 				src/parsing/init.c \
+				src/parsing/init_texture.c \
 				src/utils/ft_puterror.c \
 				src/utils/ft_len_tab.c
 OBJ 		= $(SRC:.c=.o)
@@ -58,6 +59,7 @@ clear: fclean
 	$(RM) -r $(FT)
 	$(RM) -r $(MLX) 
 
-re: fclean all
+re: fclean
+	$(MAKE) -j$(nproc)
 
 .PHONY:		all bonus clear clean fclean re

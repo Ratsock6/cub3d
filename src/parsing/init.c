@@ -6,18 +6,18 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:24:39 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/14 17:42:08 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/15 17:43:15 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-static void	init_path_null(t_core *core)
+void	pre_free_path(t_core *core)
 {
-	core->img->path_east = NULL;
-	core->img->path_north = NULL;
-	core->img->path_south = NULL;
-	core->img->path_west = NULL;
+	free(core->img->path_east);
+	free(core->img->path_west);
+	free(core->img->path_north);
+	free(core->img->path_south);
 }
 
 static int	open_file(t_core *core, char **argv)
@@ -43,22 +43,51 @@ static int	data_error(t_core *core)
 		|| (core->img->floor->b > 255 || core->img->floor->b < 0)
 	)
 		return (ft_puterror("Floor RGB Error"));
+	if ((core->img->celling->r > 255 || core->img->celling->r < 0)
+		|| (core->img->celling->g > 255 || core->img->celling->g < 0)
+		|| (core->img->celling->b > 255 || core->img->celling->b < 0)
+	)
+		return (ft_puterror("Celling RGB Error"));
 	return (0);
 }
 
-int	init(t_core *core, char **argv)
+static int	init_var(t_core *core)
 {
 	core->map = ft_calloc(1, sizeof(t_map));
 	core->img = ft_calloc(1, sizeof(t_texture));
 	core->img->celling = ft_calloc(1, sizeof(t_rgb));
 	core->img->floor = ft_calloc(1, sizeof(t_rgb));
-	init_path_null(core);
+	core->mlx = NULL;
+	core->img->path_east = NULL;
+	core->img->path_north = NULL;
+	core->img->path_south = NULL;
+	core->img->path_west = NULL;
+	core->pos[X] = -1;
+	core->pos[Y] = -1;
+	if (core->map == NULL || core->img == NULL || core->img->celling == NULL
+		|| core->img->floor == NULL)
+		return (ft_puterror("Malloc error"));
+	return (0);
+}
+
+int	init(t_core *core, char **argv)
+{
+	if (init_var(core))
+		return (ft_puterror("Error init var"));
 	if (open_file(core, argv))
 		return (ft_puterror("The file can't be open"));
 	if (parsing_data(core))
+	{
+		pre_free_path(core);
 		return (ft_puterror("Parsing file data error"));
+	}
 	if (data_error(core))
-		return (1);
+	{
+		pre_free_path(core);
+		return (ft_puterror("Data file error"));
+	}
+	if (init_texture(core))
+		return (ft_puterror("Init Texture Error"));
 	if (parsing_map(core))
 		return (ft_puterror("Parsing file map error"));
 	return (0);
