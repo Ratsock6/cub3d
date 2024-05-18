@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/15 17:41:07 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/17 15:49:26 by maxborde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,13 @@ typedef struct s_core
 	t_states	direction;
 	long		pos[2];
 	char		**tmp_map;
+	mlx_image_t	*image;
 }				t_core;
+//RENDERING
+void	rendering(t_core *core);
+void	rendering_test(t_core *core);
+//CHECKING
+bool	is_map_closed(char **map);
 
 //PARSING
 int		check_error(int argc, char **argv);

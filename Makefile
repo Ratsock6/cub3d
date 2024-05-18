@@ -3,7 +3,7 @@ NAME 		= cub3d
 CC 			= cc
 RM			= rm -f
 
-CFLAGS 		+= -Wall -Wextra -Werror -Iinclude -g
+CFLAGS 		+= -Iinclude -g
 CLINKS		= -ldl -lglfw -pthread -lm
 
 MLX			= minilibx
@@ -18,8 +18,10 @@ SRC 		= src/main.c \
 				src/parsing/parsing_map.c \
 				src/parsing/init.c \
 				src/parsing/init_texture.c \
+				src/parsing/closed_map.c \
 				src/utils/ft_puterror.c \
-				src/utils/ft_len_tab.c
+				src/rendering.c \
+				src/utils/ft_len_tab.c 
 OBJ 		= $(SRC:.c=.o)
 
 all: $(NAME)

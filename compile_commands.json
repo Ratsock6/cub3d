@@ -1,0 +1,1499 @@
+[
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_lstnew.o",
+            "ft_lstnew.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_lstnew.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/mlx_keys.c.o",
+            "src/mlx_keys.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/mlx_keys.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/mlx_put_pixel.c.o",
+            "src/mlx_put_pixel.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/mlx_put_pixel.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/textures/mlx_png.c.o",
+            "src/textures/mlx_png.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/textures/mlx_png.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/mlx_init.c.o",
+            "src/mlx_init.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/mlx_init.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "get_next_line.o",
+            "get_next_line.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "get_next_line.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Iinclude",
+            "-g",
+            "-o",
+            "src/parsing/parsing_data.o",
+            "src/parsing/parsing_data.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d",
+        "file": "src/parsing/parsing_data.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_lstadd_front.o",
+            "ft_lstadd_front.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_lstadd_front.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/utils/mlx_utils.c.o",
+            "src/utils/mlx_utils.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/utils/mlx_utils.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/utils/mlx_compare.c.o",
+            "src/utils/mlx_compare.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/utils/mlx_compare.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_lstclear.o",
+            "ft_lstclear.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_lstclear.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_printf.o",
+            "ft_printf.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_printf.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_tolower.o",
+            "ft_tolower.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_tolower.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_bzero.o",
+            "ft_bzero.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_bzero.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/mlx_images.c.o",
+            "src/mlx_images.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/mlx_images.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/utils/mlx_list.c.o",
+            "src/utils/mlx_list.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/utils/mlx_list.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Iinclude",
+            "-g",
+            "-o",
+            "src/parsing/init_texture.o",
+            "src/parsing/init_texture.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d",
+        "file": "src/parsing/init_texture.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Iinclude",
+            "-g",
+            "-o",
+            "src/parsing/valid_map.o",
+            "src/parsing/valid_map.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d",
+        "file": "src/parsing/valid_map.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_strlcat.o",
+            "ft_strlcat.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_strlcat.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_strnstr.o",
+            "ft_strnstr.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_strnstr.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/lib/png/lodepng.c.o",
+            "lib/png/lodepng.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "lib/png/lodepng.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_printf_hex.o",
+            "ft_printf_hex.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_printf_hex.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/font/mlx_font.c.o",
+            "src/font/mlx_font.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/font/mlx_font.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_strchr.o",
+            "ft_strchr.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_strchr.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Iinclude",
+            "-g",
+            "-o",
+            "src/parsing/error.o",
+            "src/parsing/error.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d",
+        "file": "src/parsing/error.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/lib/glad/glad.c.o",
+            "lib/glad/glad.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "lib/glad/glad.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/mlx_frag_shader.c.o",
+            "mlx_frag_shader.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "mlx_frag_shader.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_putnbr_fd.o",
+            "ft_putnbr_fd.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_putnbr_fd.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_strncmp.o",
+            "ft_strncmp.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_strncmp.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_striteri.o",
+            "ft_striteri.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_striteri.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_strrchr.o",
+            "ft_strrchr.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_strrchr.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_putchar_fd.o",
+            "ft_putchar_fd.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_putchar_fd.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_strdup.o",
+            "ft_strdup.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_strdup.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_toupper.o",
+            "ft_toupper.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_toupper.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/mlx_window.c.o",
+            "src/mlx_window.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/mlx_window.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_memcpy.o",
+            "ft_memcpy.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_memcpy.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_lstdelone.o",
+            "ft_lstdelone.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_lstdelone.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_count_utils.o",
+            "ft_count_utils.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_count_utils.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/mlx_mouse.c.o",
+            "src/mlx_mouse.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/mlx_mouse.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_strlen.o",
+            "ft_strlen.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_strlen.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_printf_text.o",
+            "ft_printf_text.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_printf_text.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_isascii.o",
+            "ft_isascii.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_isascii.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_strcmp.o",
+            "ft_strcmp.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_strcmp.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_free_str_tab.o",
+            "ft_free_str_tab.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_free_str_tab.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_split.o",
+            "ft_split.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_split.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_putendl_fd.o",
+            "ft_putendl_fd.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_putendl_fd.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_substr.o",
+            "ft_substr.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_substr.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_memchr.o",
+            "ft_memchr.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_memchr.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "get_next_line_utils.o",
+            "get_next_line_utils.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "get_next_line_utils.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_lstsize.o",
+            "ft_lstsize.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_lstsize.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/mlx_cursor.c.o",
+            "src/mlx_cursor.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/mlx_cursor.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Iinclude",
+            "-g",
+            "-o",
+            "src/parsing/parsing_map.o",
+            "src/parsing/parsing_map.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d",
+        "file": "src/parsing/parsing_map.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_lstadd_back.o",
+            "ft_lstadd_back.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_lstadd_back.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Iinclude",
+            "-g",
+            "-o",
+            "src/main.o",
+            "src/main.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d",
+        "file": "src/main.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_strtrim.o",
+            "ft_strtrim.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_strtrim.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Iinclude",
+            "-g",
+            "-o",
+            "src/parsing/init.o",
+            "src/parsing/init.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d",
+        "file": "src/parsing/init.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_calloc.o",
+            "ft_calloc.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_calloc.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_isalpha.o",
+            "ft_isalpha.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_isalpha.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_isonly.o",
+            "ft_isonly.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_isonly.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_itoa.o",
+            "ft_itoa.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_itoa.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_printf_num.o",
+            "ft_printf_num.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_printf_num.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_putstr_fd.o",
+            "ft_putstr_fd.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_putstr_fd.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/textures/mlx_xpm42.c.o",
+            "src/textures/mlx_xpm42.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/textures/mlx_xpm42.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_isdigit.o",
+            "ft_isdigit.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_isdigit.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_strlcpy.o",
+            "ft_strlcpy.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_strlcpy.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_memcmp.o",
+            "ft_memcmp.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_memcmp.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_lstlast.o",
+            "ft_lstlast.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_lstlast.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/mlx_vert_shader.c.o",
+            "mlx_vert_shader.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "mlx_vert_shader.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_lstmap.o",
+            "ft_lstmap.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_lstmap.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_memmove.o",
+            "ft_memmove.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_memmove.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/utils/mlx_error.c.o",
+            "src/utils/mlx_error.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/utils/mlx_error.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Iinclude",
+            "-g",
+            "-o",
+            "src/utils/ft_puterror.o",
+            "src/utils/ft_puterror.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d",
+        "file": "src/utils/ft_puterror.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_strmapi.o",
+            "ft_strmapi.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_strmapi.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_memset.o",
+            "ft_memset.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_memset.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_atoi.o",
+            "ft_atoi.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_atoi.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/mlx_exit.c.o",
+            "src/mlx_exit.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/mlx_exit.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/textures/mlx_texture.c.o",
+            "src/textures/mlx_texture.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/textures/mlx_texture.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_strjoin.o",
+            "ft_strjoin.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_strjoin.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/mlx_loop.c.o",
+            "src/mlx_loop.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/mlx_loop.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Iinclude",
+            "-g",
+            "-o",
+            "src/utils/ft_len_tab.o",
+            "src/utils/ft_len_tab.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d",
+        "file": "src/utils/ft_len_tab.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_isprint.o",
+            "ft_isprint.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_isprint.c"
+    },
+    {
+        "arguments": [
+            "/usr/bin/cc",
+            "-c",
+            "-I/home/maxborde/documents/code/42/cub3d/minilibx/include",
+            "-std=c11",
+            "-fPIC",
+            "-D",
+            "LODEPNG_NO_COMPILE_ENCODER",
+            "-D",
+            "LODEPNG_NO_COMPILE_ANCILLARY_CHUNKS",
+            "-D",
+            "NDEBUG",
+            "-Wextra",
+            "-Wall",
+            "-Werror",
+            "-Wunreachable-code",
+            "-Wno-char-subscripts",
+            "-Wno-sign-compare",
+            "-Wno-unused-parameter",
+            "-Wno-missing-field-initializers",
+            "-Ofast",
+            "-o",
+            "CMakeFiles/mlx42.dir/src/mlx_monitor.c.o",
+            "src/mlx_monitor.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/minilibx",
+        "file": "src/mlx_monitor.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_isalnum.o",
+            "ft_isalnum.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_isalnum.c"
+    },
+    {
+        "arguments": [
+            "cc",
+            "-c",
+            "-Wall",
+            "-Wextra",
+            "-Werror",
+            "-o",
+            "ft_lstiter.o",
+            "ft_lstiter.c"
+        ],
+        "directory": "/home/maxborde/documents/code/42/cub3d/libft",
+        "file": "ft_lstiter.c"
+    }
+]

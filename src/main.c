@@ -6,13 +6,13 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:50:14 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/15 17:40:25 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/17 16:12:35 by maxborde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-void	print_str_tab(char **str_tab)
+void	print_tab(char **str_tab)
 {
 	size_t	i;
 
@@ -49,7 +49,9 @@ int	main(int argc, char **argv)
 		free_all(&core);
 		return (1);
 	}
-	print_str_tab(core.map->map);
+	print_tab(core.map->map);
+	printf("IS MAP CLOSED = %d\n", is_map_closed(core.map->map));
+	//rendering(&core);
 	free_all(&core);
 	return (0);
 }
