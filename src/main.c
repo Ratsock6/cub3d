@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:50:14 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/21 15:55:24 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/21 16:56:10 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static void	free_all(t_core *core)
 	free(core->img->floor);
 	free(core->img->celling);
 	free(core->img);
+	free(core->player);
 	if (core->mlx)
 		mlx_terminate(core->mlx);
 }

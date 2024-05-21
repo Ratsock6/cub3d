@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:03:23 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/21 16:36:43 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/21 17:08:59 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,6 @@ void	start_minmap(t_core *core)
 		}
 		y++;
 	}
-	mlx_image_to_window(core->mlx, core->img->min_map_player, core->pos[X] * SIZE_CUBE, core->pos[Y] * SIZE_CUBE);
+	mlx_image_to_window(core->mlx, core->img->min_map_player, core->player->pos_x * SIZE_CUBE, core->player->pos_y * SIZE_CUBE);
 	mlx_loop_hook(core->mlx, ft_hook, core);
 }

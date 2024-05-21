@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/21 16:30:01 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/21 17:06:49 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,11 @@
 # define SIZE_HEIGHT 1000
 # define SIZE_WIDTH 1900
 # define SIZE_CUBE 16
+# define FOV 60
+# define ROTATION_SPEED 0.045
+# define PLAYER_SPEED 4
+# define PI 3.141592653
+
 
 typedef struct s_map
 {
@@ -47,14 +52,6 @@ typedef struct s_rgb
 	int	b;
 }		t_rgb;
 
-typedef enum e_states
-{
-	NORTH,
-	SOUTH,
-	EAST,
-	WEST
-}	t_states;
-
 typedef struct s_texture
 {
 	char			*path_north;
@@ -72,15 +69,23 @@ typedef struct s_texture
 	mlx_image_t		*min_map_floor;
 }		t_texture;
 
+typedef struct s_player
+{
+	double	pos_x;
+	double	pos_y;
+	double	angle;
+	float	direction; //en radiant
+}				t_player;
+
 typedef struct s_core
 {
 	t_map		*map;
 	t_texture	*img;
 	mlx_t		*mlx;
-	t_states	direction;
 	double		pos[2];
 	char		**tmp_map;
 	int			debug;
+	t_player	*player;
 }				t_core;
 
 //PARSING
