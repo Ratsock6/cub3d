@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:24:39 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/15 17:43:15 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/21 13:54:48 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,8 @@ static int	init_var(t_core *core)
 	core->img->path_north = NULL;
 	core->img->path_south = NULL;
 	core->img->path_west = NULL;
+	core->map->screen_height = SIZE_HEIGHT;
+	core->map->screen_width = SIZE_WIDTH;
 	core->pos[X] = -1;
 	core->pos[Y] = -1;
 	if (core->map == NULL || core->img == NULL || core->img->celling == NULL
