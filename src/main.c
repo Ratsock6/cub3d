@@ -6,26 +6,11 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:50:14 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/15 17:40:25 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/21 16:56:10 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
-void	print_str_tab(char **str_tab)
-{
-	size_t	i;
-
-	if (str_tab)
-	{
-		i = 0;
-		while (str_tab[i])
-		{
-			ft_putendl_fd(str_tab[i], 2);
-			i++;
-		}
-	}
-}
 
 static void	free_all(t_core *core)
 {
@@ -34,6 +19,7 @@ static void	free_all(t_core *core)
 	free(core->img->floor);
 	free(core->img->celling);
 	free(core->img);
+	free(core->player);
 	if (core->mlx)
 		mlx_terminate(core->mlx);
 }
@@ -42,6 +28,7 @@ int	main(int argc, char **argv)
 {
 	t_core	core;
 
+	core.debug = 1;
 	if (check_error(argc, argv))
 		return (1);
 	if (init(&core, argv))
@@ -49,7 +36,7 @@ int	main(int argc, char **argv)
 		free_all(&core);
 		return (1);
 	}
-	print_str_tab(core.map->map);
+	start(&core);
 	free_all(&core);
 	return (0);
 }

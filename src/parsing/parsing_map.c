@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:24:47 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/15 17:47:45 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/21 17:08:37 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,16 +62,17 @@ static int	where_is_player(char *line, t_core *core, int y)
 			continue ;
 		if (core->pos[y] != -1)
 			return (ft_puterror("Double player found"));
-		core->pos[Y] = y;
-		core->pos[X] = x;
+		core->map->map[y][x] = '0';
+		core->player->pos_y = y;
+		core->player->pos_x = x;
 		if (line[x] == 'N')
-			core->direction = NORTH;
+			core->player->direction = 3*PI/2;
 		if (line[x] == 'S')
-			core->direction = SOUTH;
+			core->player->direction = PI/2;
 		if (line[x] == 'E')
-			core->direction = EAST;
+			core->player->direction = 0;
 		if (line[x] == 'W')
-			core->direction = WEST;
+			core->player->direction = PI;
 	}
 	return (0);
 }
@@ -96,6 +97,9 @@ int	parsing_map(t_core *core)
 			return (1);
 		if (where_is_player(line, core, y))
 			return (1);
+		core->map->height = y;
+		if (ft_strlen(core->map->map[y]) >= core->map->width)
+			core->map->width = ft_strlen(core->map->map[y]);
 		y++;
 	}
 	return (0);

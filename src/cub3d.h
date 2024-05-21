@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/15 17:41:07 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/21 17:06:49 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,23 @@
 
 # define Y 0
 # define X 1
+# define SIZE_HEIGHT 1000
+# define SIZE_WIDTH 1900
+# define SIZE_CUBE 16
+# define FOV 60
+# define ROTATION_SPEED 0.045
+# define PLAYER_SPEED 4
+# define PI 3.141592653
+
 
 typedef struct s_map
 {
 	char		**map;
 	int			fd;
+	int			screen_width;
+	int			screen_height;
+	size_t		width;
+	size_t		height;
 }				t_map;
 
 typedef struct s_rgb
@@ -39,14 +51,6 @@ typedef struct s_rgb
 	int	g;
 	int	b;
 }		t_rgb;
-
-typedef enum e_states
-{
-	NORTH,
-	SOUTH,
-	EAST,
-	WEST
-}	t_states;
 
 typedef struct s_texture
 {
@@ -60,16 +64,28 @@ typedef struct s_texture
 	mlx_image_t		*img_west;
 	t_rgb			*floor;
 	t_rgb			*celling;
+	mlx_image_t		*min_map_player;
+	mlx_image_t		*min_map_cube;
+	mlx_image_t		*min_map_floor;
 }		t_texture;
+
+typedef struct s_player
+{
+	double	pos_x;
+	double	pos_y;
+	double	angle;
+	float	direction; //en radiant
+}				t_player;
 
 typedef struct s_core
 {
 	t_map		*map;
 	t_texture	*img;
 	mlx_t		*mlx;
-	t_states	direction;
-	long		pos[2];
+	double		pos[2];
 	char		**tmp_map;
+	int			debug;
+	t_player	*player;
 }				t_core;
 
 //PARSING
@@ -83,5 +99,11 @@ void	pre_free_path(t_core *core);
 // UTILS
 int		ft_puterror(char *error);
 size_t	ft_len_tab(char **str_tab);
+int32_t ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a);
+void	mlx_fill_image(mlx_image_t *img, int32_t r, int32_t g, int32_t b);
+
+//GAME
+void	start(t_core *core);
+void	start_minmap(t_core *core);
 
 #endif
