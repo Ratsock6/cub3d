@@ -23,7 +23,9 @@ SRC 		= src/main.c \
 				src/utils/mlx_fill_image.c \
 				src/utils/ft_len_tab.c \
 				src/game/start.c \
-				src/game/minmap_manager.c
+				src/game/minmap_manager.c \
+				src/game/move.c \
+				src/utils/is_wall.c
 OBJ 		= $(SRC:.c=.o)
 
 all: $(NAME)

@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/21 17:06:49 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/23 10:21:54 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,9 @@
 # define SIZE_WIDTH 1900
 # define SIZE_CUBE 16
 # define FOV 60
-# define ROTATION_SPEED 0.045
-# define PLAYER_SPEED 4
+# define PLAYER_SPEED 0.05
 # define PI 3.141592653
-
+# define ROTATION_SPEED 3.141592653/20
 
 typedef struct s_map
 {
@@ -101,9 +100,16 @@ int		ft_puterror(char *error);
 size_t	ft_len_tab(char **str_tab);
 int32_t ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void	mlx_fill_image(mlx_image_t *img, int32_t r, int32_t g, int32_t b);
+int		is_wall(t_core *core, float pos_y, float pos_x);
 
 //GAME
 void	start(t_core *core);
 void	start_minmap(t_core *core);
+
+//MOVE
+void	move_back(t_core *core);
+void	move_foward(t_core *core);
+void	move_right(t_core *core);
+void	move_left(t_core *core);
 
 #endif
