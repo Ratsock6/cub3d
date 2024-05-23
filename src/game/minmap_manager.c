@@ -6,24 +6,39 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:03:23 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/21 17:08:59 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/23 10:39:38 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
+void	ft_key_hook(mlx_key_data_t keydata, void *param)
+{
+	t_core	*core;
+
+	core = param;
+	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
+		mlx_close_window(core->mlx);
+	if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_PRESS)
+		core->player->direction = core->player->direction + ROTATION_SPEED;
+	if (keydata.key == MLX_KEY_LEFT && keydata.action == MLX_PRESS)
+		core->player->direction = core->player->direction - ROTATION_SPEED;
+}
+
 void ft_hook(void *param)
 {
 	t_core *core = param;
 
-	if (mlx_is_key_down(core->mlx, MLX_KEY_UP))
-		core->img->min_map_player->instances[0].y -= 1;
-	if (mlx_is_key_down(core->mlx, MLX_KEY_DOWN))
-		core->img->min_map_player->instances[0].y += 1;
-	if (mlx_is_key_down(core->mlx, MLX_KEY_LEFT))
-		core->img->min_map_player->instances[0].x -= 1;
-	if (mlx_is_key_down(core->mlx, MLX_KEY_RIGHT))
-		core->img->min_map_player->instances[0].x += 1;
+	if (mlx_is_key_down(core->mlx, MLX_KEY_W))
+		move_foward(core);
+	if (mlx_is_key_down(core->mlx, MLX_KEY_S))
+		move_back(core);
+	if (mlx_is_key_down(core->mlx, MLX_KEY_A))
+		move_left(core);
+	if (mlx_is_key_down(core->mlx, MLX_KEY_D))
+		move_right(core);
+	core->img->min_map_player->instances[0].x = core->player->pos_x * SIZE_CUBE;
+	core->img->min_map_player->instances[0].y = core->player->pos_y * SIZE_CUBE;
 }
 
 void	start_minmap(t_core *core)
@@ -48,4 +63,5 @@ void	start_minmap(t_core *core)
 	}
 	mlx_image_to_window(core->mlx, core->img->min_map_player, core->player->pos_x * SIZE_CUBE, core->player->pos_y * SIZE_CUBE);
 	mlx_loop_hook(core->mlx, ft_hook, core);
+	mlx_key_hook(core->mlx, ft_key_hook, core);
 }

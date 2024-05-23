@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:24:43 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/21 17:20:35 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/23 09:59:36 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,8 @@ static void	init_wall(t_core *core)
 
 static void	init_player(t_core *core)
 {
-	unsigned int	i;
-	unsigned int	x;
-
-	core->img->min_map_player = mlx_new_image(core->mlx, 10, 10);
-	i = 0;
-	while (i <= 2)
-	{
-		x = 0;
-		while (x <= 2)
-		{
-			mlx_put_pixel(core->img->min_map_player, i, x, ft_pixel(255, 0, 0, 255));
-			x++;
-		}
-		i++;
-	}
-	mlx_put_pixel(core->img->min_map_player, 1, 3, ft_pixel(255, 0, 0, 255));
-	mlx_put_pixel(core->img->min_map_player, 1, 4, ft_pixel(255, 0, 0, 255));
-	mlx_put_pixel(core->img->min_map_player, 1, 5, ft_pixel(255, 0, 0, 255));
-	mlx_put_pixel(core->img->min_map_player, 1, 6, ft_pixel(255, 0, 0, 255));
-	mlx_put_pixel(core->img->min_map_player, 1, 7, ft_pixel(255, 0, 0, 255));
+	core->img->min_map_player = mlx_new_image(core->mlx, 2, 2);
+	mlx_fill_image(core->img->min_map_player, 255, 0, 0);
 }
 
 static void	init_floor(t_core *core)
