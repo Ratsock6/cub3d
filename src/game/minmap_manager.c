@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:03:23 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/23 10:39:38 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/29 12:51:00 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,11 @@
 void	ft_key_hook(mlx_key_data_t keydata, void *param)
 {
 	t_core	*core;
+	int32_t	mouse_x;
 
 	core = param;
+	mouse_x = 0;
+	mlx_get_mouse_pos(core->mlx, &mouse_x, NULL);
 	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
 		mlx_close_window(core->mlx);
 	if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_PRESS)

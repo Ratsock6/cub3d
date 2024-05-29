@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 13:48:24 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/21 16:10:28 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/23 11:15:48 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ void	resize(int width, int height, void *param)
 
 void	start(t_core *core)
 {
+	mlx_set_window_limit(core->mlx, 900, 700, 1920, 1080);
 	mlx_resize_hook(core->mlx, resize, core);
 	start_minmap(core);
 	mlx_loop(core->mlx);

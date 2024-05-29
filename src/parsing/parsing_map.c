@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:24:47 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/21 17:08:37 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/23 13:38:32 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,17 +62,18 @@ static int	where_is_player(char *line, t_core *core, int y)
 			continue ;
 		if (core->pos[y] != -1)
 			return (ft_puterror("Double player found"));
-		core->map->map[y][x] = '0';
 		core->player->pos_y = y;
 		core->player->pos_x = x;
-		if (line[x] == 'N')
+		if (core->map->map[y][x] == 'N')
 			core->player->direction = 3*PI/2;
-		if (line[x] == 'S')
+		if (core->map->map[y][x] == 'S')
 			core->player->direction = PI/2;
-		if (line[x] == 'E')
+		if (core->map->map[y][x] == 'E')
 			core->player->direction = 0;
-		if (line[x] == 'W')
+		if (core->map->map[y][x] == 'W')
 			core->player->direction = PI;
+		core->map->map[y][x] = '0';
+		printf("PLAYER DIRECTION = %f\n", core->player->direction);
 	}
 	return (0);
 }
