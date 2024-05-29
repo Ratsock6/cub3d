@@ -20,8 +20,13 @@ SRC 		= src/main.c \
 				src/parsing/init_texture.c \
 				src/parsing/closed_map.c \
 				src/utils/ft_puterror.c \
-				src/rendering.c \
-				src/utils/ft_len_tab.c 
+				src/utils/ft_pixel.c \
+				src/utils/mlx_fill_image.c \
+				src/utils/ft_len_tab.c \
+				src/game/start.c \
+				src/game/minmap_manager.c \
+				src/game/move.c \
+				src/utils/is_wall.c
 OBJ 		= $(SRC:.c=.o)
 
 all: $(NAME)
