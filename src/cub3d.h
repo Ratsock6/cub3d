@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/23 10:21:54 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/30 19:54:24 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,8 @@
 # define SIZE_HEIGHT 1000
 # define SIZE_WIDTH 1900
 # define SIZE_CUBE 16
-# define FOV 60
-# define PLAYER_SPEED 0.05
-# define PI 3.141592653
-# define ROTATION_SPEED 3.141592653/20
+# define PLAYER_SPEED 0.1
+# define ROT_SPEED 0.05
 
 typedef struct s_map
 {
@@ -68,12 +66,24 @@ typedef struct s_texture
 	mlx_image_t		*min_map_floor;
 }		t_texture;
 
+typedef struct s_raycast
+{
+	double		x;
+	double		y;
+	double		dist;
+	int			side; // 0 for vertical, 1 for horizontal
+	mlx_image_t	*image;
+} t_raycast;
+
 typedef struct s_player
 {
 	double	pos_x;
 	double	pos_y;
+	double	dirX;
+	double	dirY;
+	double	planeX;
+	double	planeY;
 	double	angle;
-	float	direction; //en radiant
 }				t_player;
 
 typedef struct s_core
@@ -85,6 +95,7 @@ typedef struct s_core
 	char		**tmp_map;
 	int			debug;
 	t_player	*player;
+	t_raycast	raycast;
 }				t_core;
 //RENDERING
 void	rendering(t_core *core);
@@ -110,11 +121,13 @@ int		is_wall(t_core *core, float pos_y, float pos_x);
 //GAME
 void	start(t_core *core);
 void	start_minmap(t_core *core);
+void	render(t_core *core);
 
 //MOVE
 void	move_back(t_core *core);
 void	move_foward(t_core *core);
 void	move_right(t_core *core);
 void	move_left(t_core *core);
+void	rotate_player(t_core *core, double angle);
 
 #endif

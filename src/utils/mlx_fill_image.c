@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:05:19 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/21 16:16:00 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/30 17:54:31 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,15 @@ void	mlx_fill_image(mlx_image_t *img, int32_t r, int32_t g, int32_t b)
 	unsigned int	x;
 
 	i = 0;
-	while (i <= img->height - 1)
+	while (i < img->height)
 	{
 		x = 0;
-		while (x <= img->width - 1)
+		while (x < img->width)
 		{
-			mlx_put_pixel(img, i, x, ft_pixel(r, g, b, 255));
+			mlx_put_pixel(img, x, i, ft_pixel(r, g, b, 255));
 			x++;
 		}
 		i++;
 	}
 }
+

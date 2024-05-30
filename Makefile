@@ -26,6 +26,7 @@ SRC 		= src/main.c \
 				src/game/start.c \
 				src/game/minmap_manager.c \
 				src/game/move.c \
+				src/game/raycasting.c \
 				src/utils/is_wall.c
 OBJ 		= $(SRC:.c=.o)
 
