@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:50:14 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/21 16:56:10 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:16:51 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int	main(int argc, char **argv)
 		free_all(&core);
 		return (1);
 	}
+	printf("C %i, %i, %i\n", core.img->celling->r, core.img->celling->g, core.img->celling->b);
 	start(&core);
 	free_all(&core);
 	return (0);

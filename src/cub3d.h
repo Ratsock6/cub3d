@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/30 17:32:08 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/30 19:54:24 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,8 @@
 # define SIZE_HEIGHT 1000
 # define SIZE_WIDTH 1900
 # define SIZE_CUBE 16
-# define FOV 60
-# define PLAYER_SPEED 0.05
-# define PI 3.141592653
-# define ROTATION_SPEED 3.141592653/20
+# define PLAYER_SPEED 0.1
+# define ROT_SPEED 0.05
 
 typedef struct s_map
 {
@@ -86,7 +84,6 @@ typedef struct s_player
 	double	planeX;
 	double	planeY;
 	double	angle;
-	float	direction; //en radiant
 }				t_player;
 
 typedef struct s_core
@@ -126,5 +123,6 @@ void	move_back(t_core *core);
 void	move_foward(t_core *core);
 void	move_right(t_core *core);
 void	move_left(t_core *core);
+void	rotate_player(t_core *core, double angle);
 
 #endif
