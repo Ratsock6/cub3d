@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:24:47 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/23 13:38:32 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/30 20:05:23 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,12 @@ static int	add_line_to_map(char *line, t_core *core)
 	return (0);
 }
 
+static void	init_plane(t_core *core, double planeX, double planeY)
+{
+	core->player->planeX = planeX;
+	core->player->planeY = planeY;
+}
+
 static int	where_is_player(char *line, t_core *core, int y)
 {
 	int	x;
@@ -62,18 +68,19 @@ static int	where_is_player(char *line, t_core *core, int y)
 			continue ;
 		if (core->pos[y] != -1)
 			return (ft_puterror("Double player found"));
-		core->player->pos_y = y;
-		core->player->pos_x = x;
+		core->player->pos_y = y + 0.5;
+		core->player->pos_x = x + 0.5;
+		core->player->dirX = 1;
+		core->player->dirY = 0;
 		if (core->map->map[y][x] == 'N')
-			core->player->direction = 3*PI/2;
+			init_plane(core, 0, 0.66);
 		if (core->map->map[y][x] == 'S')
-			core->player->direction = PI/2;
+			init_plane(core, 0, 0.66);
 		if (core->map->map[y][x] == 'E')
-			core->player->direction = 0;
+			init_plane(core, 0, 0.66);
 		if (core->map->map[y][x] == 'W')
-			core->player->direction = PI;
+			init_plane(core, 0, 0.66);
 		core->map->map[y][x] = '0';
-		printf("PLAYER DIRECTION = %f\n", core->player->direction);
 	}
 	return (0);
 }

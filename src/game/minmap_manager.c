@@ -6,26 +6,13 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:03:23 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/29 14:35:34 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/30 19:20:30 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void	ft_key_hook(mlx_key_data_t keydata, void *param)
-{
-	t_core	*core;
-
-	core = param;
-	if (keydata.key == MLX_KEY_ESCAPE && keydata.action == MLX_PRESS)
-		mlx_close_window(core->mlx);
-	if (keydata.key == MLX_KEY_RIGHT && keydata.action == MLX_PRESS)
-		core->player->direction = core->player->direction + ROTATION_SPEED;
-	if (keydata.key == MLX_KEY_LEFT && keydata.action == MLX_PRESS)
-		core->player->direction = core->player->direction - ROTATION_SPEED;
-}
-
-void ft_hook(void *param)
+void ft_hook_2(void *param)
 {
 	t_core *core = param;
 
@@ -62,6 +49,5 @@ void	start_minmap(t_core *core)
 		y++;
 	}
 	mlx_image_to_window(core->mlx, core->img->min_map_player, core->player->pos_x * SIZE_CUBE, core->player->pos_y * SIZE_CUBE);
-	mlx_loop_hook(core->mlx, ft_hook, core);
-	mlx_key_hook(core->mlx, ft_key_hook, core);
+	mlx_loop_hook(core->mlx, ft_hook_2, core);
 }

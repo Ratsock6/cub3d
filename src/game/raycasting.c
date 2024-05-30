@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:55:44 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/30 17:54:56 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/30 18:50:29 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,22 +94,14 @@ void	draw_column(int x, t_core *core)
 	if (draw_end >= core->map->screen_height)
 		draw_end = core->map->screen_height - 1;
 	if (core->raycast.side == 1)
-		color = 0xAAAAAAFF; // color GRAY
+		color = 0xAAAAAAFF;
 	else
-		color = 0xFFFFFFFF; // color WHITE
+		color = 0xFFFFFFFF;
 	y = draw_start;
 	while (y < draw_end)
 	{
 		mlx_put_pixel(core->raycast.image, x, y, color);
 		y++;
-	}
-}
-
-void	clear_image(mlx_image_t *image, uint32_t color) {
-	for (uint32_t y = 0; y < image->height; y++) {
-		for (uint32_t x = 0; x < image->width; x++) {
-			mlx_put_pixel(image, x, y, color);
-		}
 	}
 }
 
@@ -119,18 +111,11 @@ void	render(t_core *core)
 	double		cameraX;
 	double		rayDirX;
 	double		rayDirY;
-	t_raycast	raycast;
 
-	raycast.image = mlx_new_image(core->mlx, core->map->screen_width, core->map->screen_height);
-	core->raycast = raycast;
+	mlx_delete_image(core->mlx, core->raycast.image);
+	core->raycast.image = mlx_new_image(core->mlx, core->map->screen_width, core->map->screen_height);
 	mlx_fill_image(core->raycast.image, 0, 0, 0);
 	x = 0;
-	core->player->pos_x += 0.5;
-	core->player->pos_y += 0.5;
-	core->player->dirX = -1;
-	core->player->dirY = 0;
-	core->player->planeX = 0;
-	core->player->planeY = 0.66;
 	while (x < core->map->screen_width)
 	{
 		cameraX = 2 * x / (double)core->map->screen_width - 1;
