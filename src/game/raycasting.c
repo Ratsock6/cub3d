@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:55:44 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/30 18:50:29 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/31 11:53:42 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,8 @@ void	render(t_core *core)
 
 	mlx_delete_image(core->mlx, core->raycast.image);
 	core->raycast.image = mlx_new_image(core->mlx, core->map->screen_width, core->map->screen_height);
-	mlx_fill_image(core->raycast.image, 0, 0, 0);
+	mlx_fill_image(core->raycast.image, core->img->celling->r, core->img->celling->g, core->img->celling->b);
+	mlx_fill_floor(core->raycast.image, core->img->floor->r, core->img->floor->g, core->img->floor->b);
 	x = 0;
 	while (x < core->map->screen_width)
 	{
