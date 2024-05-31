@@ -3,7 +3,7 @@ NAME 		= cub3d
 CC 			= cc
 RM			= rm -f
 
-CFLAGS 		+= -Wall -Wextra -Werror -Iinclude -g
+CFLAGS 		+= -Wall -Wextra -Werror -Iinclude -g -fPIE
 CLINKS		= -ldl -lglfw -pthread -lm
 
 MLX			= minilibx
@@ -25,8 +25,7 @@ SRC 		= src/main.c \
 				src/game/start.c \
 				src/game/minmap_manager.c \
 				src/game/move.c \
-				src/game/raycasting.c \
-				src/utils/is_wall.c
+				src/game/raycasting.c
 OBJ 		= $(SRC:.c=.o)
 
 all: $(NAME)
