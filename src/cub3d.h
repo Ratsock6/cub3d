@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/31 15:44:21 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:42:14 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,6 +105,9 @@ int		parsing_data(t_core *core);
 int		parsing_map(t_core *core);
 int		init_texture(t_core *core);
 void	pre_free_path(t_core *core);
+
+//CHECKING
+bool	is_map_closed(char **map);
 
 // UTILS
 int		ft_puterror(char *error);

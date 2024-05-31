@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:24:47 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/31 15:43:06 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:49:30 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,12 +66,13 @@ static int	where_is_player(char *line, t_core *core, int y)
 		if (line[x] != 'N' && line[x] != 'S' && line[x] != 'E'
 			&& line[x] != 'W')
 			continue ;
-		if (core->pos[y] != -1)
+		if (core->pos[Y] != -1)
 			return (ft_puterror("Double player found"));
 		core->player->pos_y = y + 0.5;
 		core->player->pos_x = x + 0.5;
 		core->player->dir_x = 1;
 		core->player->dir_y = 0;
+		core->pos[Y] = 1;
 		if (core->map->map[y][x] == 'N')
 			init_plane(core, 0, 0.66);
 		if (core->map->map[y][x] == 'S')
