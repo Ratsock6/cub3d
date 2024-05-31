@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/31 11:46:36 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:44:21 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,16 +73,16 @@ typedef struct s_raycast
 	double		dist;
 	int			side; // 0 for vertical, 1 for horizontal
 	mlx_image_t	*image;
-} t_raycast;
+}	t_raycast;
 
 typedef struct s_player
 {
 	double	pos_x;
 	double	pos_y;
-	double	dirX;
-	double	dirY;
-	double	planeX;
-	double	planeY;
+	double	dir_x;
+	double	dir_y;
+	double	plane_x;
+	double	plane_y;
 	double	angle;
 }				t_player;
 
@@ -109,13 +109,13 @@ void	pre_free_path(t_core *core);
 // UTILS
 int		ft_puterror(char *error);
 size_t	ft_len_tab(char **str_tab);
-int32_t ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a);
+int32_t	ft_pixel(int32_t r, int32_t g, int32_t b, int32_t a);
 void	mlx_fill_image(mlx_image_t *img, int32_t r, int32_t g, int32_t b);
 void	mlx_fill_floor(mlx_image_t *img, int32_t r, int32_t g, int32_t b);
 
 //GAME
 void	start(t_core *core);
-void	render_minmap(t_core *core);
+void	render_minmap(void *param);
 void	init_minmap(t_core *core);
 void	render(t_core *core);
 

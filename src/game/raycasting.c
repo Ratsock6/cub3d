@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:55:44 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/31 11:53:42 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/31 15:43:43 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,67 +14,67 @@
 
 void	fill_raycast(double rayDirX, double rayDirY, t_core *core)
 {
-	int			mapX;
-	int			mapY;
-	double		sideDistX;
-	double		sideDistY;
-	double		deltaDistX;
-	double		deltaDistY;
-	double		perpWallDist;
-	int			stepX;
-	int			stepY;
+	int			map_x;
+	int			map_y;
+	double		side_dist_x;
+	double		side_dist_y;
+	double		delta_dist_x;
+	double		delta_dist_y;
+	double		perp_wall_dist;
+	int			step_x;
+	int			step_y;
 	int			hit;
 	int			side;
 
 	hit = 0;
-	mapX = (int) core->player->pos_x;
-	mapY = (int) core->player->pos_y;
-	deltaDistX = fabs(1 / rayDirX);
-	deltaDistY = fabs(1 / rayDirY);
+	map_x = (int) core->player->pos_x;
+	map_y = (int) core->player->pos_y;
+	delta_dist_x = fabs(1 / rayDirX);
+	delta_dist_y = fabs(1 / rayDirY);
 	if (rayDirX < 0)
 	{
-		stepX = -1;
-		sideDistX = (core->player->pos_x - mapX) * deltaDistX;
-	} 
+		step_x = -1;
+		side_dist_x = (core->player->pos_x - map_x) * delta_dist_x;
+	}
 	else
 	{
-		stepX = 1;
-		sideDistX = (mapX + 1.0 - core->player->pos_x) * deltaDistX;
+		step_x = 1;
+		side_dist_x = (map_x + 1.0 - core->player->pos_x) * delta_dist_x;
 	}
 	if (rayDirY < 0)
 	{
-		stepY = -1;
-		sideDistY = (core->player->pos_y - mapY) * deltaDistY;
+		step_y = -1;
+		side_dist_y = (core->player->pos_y - map_y) * delta_dist_y;
 	}
 	else
 	{
-		stepY = 1;
-		sideDistY = (mapY + 1.0 - core->player->pos_y) * deltaDistY;
+		step_y = 1;
+		side_dist_y = (map_y + 1.0 - core->player->pos_y) * delta_dist_y;
 	}
 	while (!hit)
 	{
-		if (sideDistX < sideDistY)
+		if (side_dist_x < side_dist_y)
 		{
-			sideDistX += deltaDistX;
-			mapX += stepX;
+			side_dist_x += delta_dist_x;
+			map_x += step_x;
 			side = 0;
 		}
 		else
 		{
-			sideDistY += deltaDistY;
-			mapY += stepY;
+			side_dist_y += delta_dist_y;
+			map_y += step_y;
 			side = 1;
 		}
-		if (core->map->map[mapY][mapX] == '1')
+		if (core->map->map[map_y][map_x] == '1')
 			hit = 1;
 	}
 	if (side == 0)
-		perpWallDist = (mapX - core->player->pos_x + (1 - stepX) / 2) / rayDirX;
+		perp_wall_dist = (map_x - core->player->pos_x + (1 - step_x) / 2) / rayDirX;
 	else
-		perpWallDist = (mapY - core->player->pos_y + (1 - stepY) / 2) / rayDirY;
-	core->raycast.x = mapX;
-	core->raycast.y = mapY;
-	core->raycast.dist = perpWallDist;
+		perp_wall_dist = (map_y - core->player->pos_y + (1 - step_y) / 2) / rayDirY;
+	core->raycast.x = map_x;
+	core->raycast.y = map_y;
+	core->raycast.dist = perp_wall_dist;
 	core->raycast.side = side;
 }
 
@@ -108,21 +108,24 @@ void	draw_column(int x, t_core *core)
 void	render(t_core *core)
 {
 	int			x;
-	double		cameraX;
-	double		rayDirX;
-	double		rayDirY;
+	double		camera_x;
+	double		ray_dir_x;
+	double		ray_dir_y;
 
 	mlx_delete_image(core->mlx, core->raycast.image);
-	core->raycast.image = mlx_new_image(core->mlx, core->map->screen_width, core->map->screen_height);
-	mlx_fill_image(core->raycast.image, core->img->celling->r, core->img->celling->g, core->img->celling->b);
-	mlx_fill_floor(core->raycast.image, core->img->floor->r, core->img->floor->g, core->img->floor->b);
+	core->raycast.image = mlx_new_image(core->mlx, core->map->screen_width, \
+		core->map->screen_height);
+	mlx_fill_image(core->raycast.image, core->img->celling->r, \
+		core->img->celling->g, core->img->celling->b);
+	mlx_fill_floor(core->raycast.image, core->img->floor->r, \
+		core->img->floor->g, core->img->floor->b);
 	x = 0;
 	while (x < core->map->screen_width)
 	{
-		cameraX = 2 * x / (double)core->map->screen_width - 1;
-		rayDirX = core->player->dirX + core->player->planeX * cameraX;
-		rayDirY = core->player->dirY + core->player->planeY * cameraX;
-		fill_raycast(rayDirX, rayDirY, core);
+		camera_x = 2 * x / (double)core->map->screen_width - 1;
+		ray_dir_x = core->player->dir_x + core->player->plane_x * camera_x;
+		ray_dir_y = core->player->dir_y + core->player->plane_y * camera_x;
+		fill_raycast(ray_dir_x, ray_dir_y, core);
 		draw_column(x, core);
 		x++;
 	}
