@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 12:37:08 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/31 15:51:22 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:37:21 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	move_right(t_core *core)
 
 void	move_left(t_core *core)
 {
-	core->player->pos_x += core->player->dir_x * PLAYER_SPEED;
 	(void) core;
 }
 
