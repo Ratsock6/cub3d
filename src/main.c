@@ -36,7 +36,7 @@ int	main(int argc, char **argv)
 		free_all(&core);
 		return (1);
 	}
-	printf("C %i, %i, %i\n", core.img->celling->r, core.img->celling->g, core.img->celling->b);
+	//printf("C %i, %i, %i\n", core.img->celling->r, core.img->celling->g, core.img->celling->b);
 	start(&core);
 	free_all(&core);
 	return (0);

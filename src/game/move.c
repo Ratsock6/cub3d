@@ -59,5 +59,5 @@ void	rotate_player(t_core *core, double angle)
 		cos(angle) - core->player->planeY * sin(angle);
 	core->player->planeY = oldPlaneX * sin(angle) + \
 		core->player->planeY * cos(angle);
-	printf("NEW DIRECTION : PLAYE Y = %f     PLANE X = %f\n", core->player->planeY, core->player->planeX);
+	//printf("NEW DIRECTION : PLAYE Y = %f     PLANE X = %f\n", core->player->planeY, core->player->planeX);
 }

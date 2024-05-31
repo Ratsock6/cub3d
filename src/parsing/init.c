@@ -93,5 +93,7 @@ int	init(t_core *core, char **argv)
 		return (ft_puterror("Init Texture Error"));
 	if (parsing_map(core))
 		return (ft_puterror("Parsing file map error"));
+	if (!is_map_closed(core->map->map))
+		return (ft_puterror("Map is not closed"));
 	return (0);
 }
