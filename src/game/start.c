@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 13:48:24 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/30 20:12:24 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/31 11:48:03 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ void ft_hook(void *param)
 	if (mlx_is_key_down(core->mlx, MLX_KEY_ESCAPE))
 		mlx_close_window(core->mlx);
 	render(core);
+	//start_minmap(core);
 }
 
 void	resize(int width, int height, void *param)

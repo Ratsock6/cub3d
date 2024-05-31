@@ -6,35 +6,23 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 16:03:23 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/30 19:20:30 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/31 11:47:52 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void ft_hook_2(void *param)
+void	init_minmap(t_core *core)
 {
-	t_core *core = param;
-
-	if (mlx_is_key_down(core->mlx, MLX_KEY_W))
-		move_foward(core);
-	if (mlx_is_key_down(core->mlx, MLX_KEY_S))
-		move_back(core);
-	if (mlx_is_key_down(core->mlx, MLX_KEY_A))
-		move_left(core);
-	if (mlx_is_key_down(core->mlx, MLX_KEY_D))
-		move_right(core);
-	core->img->min_map_player->instances[0].x = core->player->pos_x * SIZE_CUBE;
-	core->img->min_map_player->instances[0].y = core->player->pos_y * SIZE_CUBE;
+	(void) core;
 }
 
-void	start_minmap(t_core *core)
+void	render_minmap(t_core *core)
 {
 	size_t	y;
 	size_t	x;
 
 	y = 0;
-	printf("DEBUG = %zu\n", core->map->height);
 	while (y <= core->map->height)
 	{
 		x = 0;
@@ -49,5 +37,4 @@ void	start_minmap(t_core *core)
 		y++;
 	}
 	mlx_image_to_window(core->mlx, core->img->min_map_player, core->player->pos_x * SIZE_CUBE, core->player->pos_y * SIZE_CUBE);
-	mlx_loop_hook(core->mlx, ft_hook_2, core);
 }
