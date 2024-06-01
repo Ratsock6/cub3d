@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:27:27 by maxborde          #+#    #+#             */
-/*   Updated: 2024/05/31 17:39:29 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:21:23 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,16 @@ void	fill_with_spaces(char *line, int len)
 	line[i] = 0;
 }
 
+/*
+If a cell is on the left extremity or the top extremity, or (i == 0, j == 0)),
+it can't be a 0
+//For cells that are not on the above extremities, we just check if the cell is
+a 0, and it it is, we check
+the 4 cells surrouding it. It can't be a NULL character, if it is, it means the
+map is not closed.
+*/
 bool	check_cell(char **map, int i, int j)
 {
-	//If a cell is on the left extremity or the top extremity, or (i == 0, j == 0)), it can't be a 0
-	
-	//For cells that are not on the above extremities, we just check if the cell is a 0, and it it is, we check
-	//the 4 cells surrouding it. It can't be a NULL character, if it is, it means the map is not closed.
 	if (i == 0)
 		if (map[i][j] == '0')
 			return (false);
@@ -62,7 +66,6 @@ bool	check_cell(char **map, int i, int j)
 		return (false);
 }
 
-
 bool	is_map_closed(char **map)
 {
 	int	i;
@@ -72,7 +75,7 @@ bool	is_map_closed(char **map)
 	while (map[i])
 	{
 		j = 0;
-		while(map[i][j])
+		while (map[i][j])
 		{
 			if (map[i][j] == '0')
 			{
@@ -83,5 +86,5 @@ bool	is_map_closed(char **map)
 		}
 		i++;
 	}
-	return (true);	
+	return (true);
 }
