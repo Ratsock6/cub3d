@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 12:37:08 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/01 17:16:18 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:30:46 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,9 @@ void	move_right(t_core *core)
 
 	move_x = core->player->plane_x * PLAYER_SPEED;
 	move_y = core->player->plane_y * PLAYER_SPEED;
-	if (core->map->map[(int)(core->player->pos_y + move_y)][(int)(core->player->pos_x + move_x)] == '0') {
+	if (core->map->map[(int)(core->player->pos_y + move_y)][(int) \
+		(core->player->pos_x + move_x)] == '0')
+	{
 		core->player->pos_x += move_x;
 		core->player->pos_y += move_y;
 	}
@@ -52,7 +54,9 @@ void	move_left(t_core *core)
 
 	move_x = -core->player->plane_x * PLAYER_SPEED;
 	move_y = -core->player->plane_y * PLAYER_SPEED;
-	if (core->map->map[(int)(core->player->pos_y + move_y)][(int)(core->player->pos_x + move_x)] == '0') {
+	if (core->map->map[(int)(core->player->pos_y + move_y)][(int) \
+		(core->player->pos_x + move_x)] == '0')
+	{
 		core->player->pos_x += move_x;
 		core->player->pos_y += move_y;
 	}
