@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 18:27:27 by maxborde          #+#    #+#             */
-/*   Updated: 2024/06/01 20:21:23 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:27:37 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ bool	check_cell(char **map, int i, int j)
 	if (j == 0)
 		if (map[i][j] == '0')
 			return (false);
-	printf("YY\n");
 	if (map[i + 1] && (map[i + 1][j] == '0' || map[i + 1][j] == '1')
 		&& map[i - 1] && (map[i - 1][j] == '0' || map[i - 1][j] == '1')
 		&& map[i][j + 1] && (map[i][j + 1] == '0' || map[i][j + 1] == '1')

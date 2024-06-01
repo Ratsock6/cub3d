@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:24:47 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/31 17:49:30 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:26:50 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,8 @@ static void	init_plane(t_core *core, double plane_x, double plane_y)
 	core->player->plane_y = plane_y;
 }
 
-static int	where_is_player(char *line, t_core *core, int y)
+static int	where_is_player(char *line, t_core *core, int y, int x)
 {
-	int	x;
-
 	x = -1;
 	while (line[++x])
 	{
@@ -104,7 +102,7 @@ int	parsing_map(t_core *core)
 		}
 		if (add_line_to_map(line, core))
 			return (1);
-		if (where_is_player(line, core, y))
+		if (where_is_player(line, core, y, 0))
 			return (1);
 		core->map->height = y;
 		if (ft_strlen(core->map->map[y]) >= core->map->width)
