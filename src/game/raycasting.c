@@ -6,88 +6,12 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:55:44 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/01 16:59:01 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:43:42 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-void	fill_raycast(double ray_dir_x, double ray_dir_y, t_core *core)
-{
-	int		map_x;
-	int		map_y;
-	double	side_dist_x;
-	double	side_dist_y;
-	double	delta_dist_x;
-	double	delta_dist_y;
-	double	perp_wall_dist;
-	double	wall_x;
-	int		step_x;
-	int		step_y;
-	int		hit;
-	int		side;
-
-	hit = 0;
-	map_x = (int)core->player->pos_x;
-	map_y = (int)core->player->pos_y;
-	delta_dist_x = fabs(1 / ray_dir_x);
-	delta_dist_y = fabs(1 / ray_dir_y);
-	if (ray_dir_x < 0)
-	{
-		step_x = -1;
-		side_dist_x = (core->player->pos_x - map_x) * delta_dist_x;
-	}
-	else
-	{
-		step_x = 1;
-		side_dist_x = (map_x + 1.0 - core->player->pos_x) * delta_dist_x;
-	}
-	if (ray_dir_y < 0)
-	{
-		step_y = -1;
-		side_dist_y = (core->player->pos_y - map_y) * delta_dist_y;
-	}
-	else
-	{
-		step_y = 1;
-		side_dist_y = (map_y + 1.0 - core->player->pos_y) * delta_dist_y;
-	}
-	while (!hit)
-	{
-		if (side_dist_x < side_dist_y)
-		{
-			side_dist_x += delta_dist_x;
-			map_x += step_x;
-			side = 0;
-		}
-		else
-		{
-			side_dist_y += delta_dist_y;
-			map_y += step_y;
-			side = 1;
-		}
-		if (core->map->map[map_y][map_x] == '1')
-			hit = 1;
-	}
-	if (side == 0)
-		perp_wall_dist = (map_x - core->player->pos_x + (1 - step_x) / 2)
-			/ ray_dir_x;
-	else
-		perp_wall_dist = (map_y - core->player->pos_y + (1 - step_y) / 2)
-			/ ray_dir_y;
-	if (side == 0)
-		wall_x = core->player->pos_y + perp_wall_dist * ray_dir_y;
-	else
-		wall_x = core->player->pos_x + perp_wall_dist * ray_dir_x;
-	wall_x -= floor(wall_x);
-	core->raycast.x = map_x;
-	core->raycast.y = map_y;
-	core->raycast.dist = perp_wall_dist;
-	core->raycast.side = side;
-	core->raycast.wall_x = wall_x;
-	core->raycast.ray_dir_x = ray_dir_x;
-	core->raycast.ray_dir_y = ray_dir_y;
-}
 
 void	draw_column(int x, t_core *core)
 {
