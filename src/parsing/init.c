@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:24:39 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/31 17:50:17 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:04:37 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,8 +91,6 @@ int	init(t_core *core, char **argv)
 	}
 	if (init_texture(core))
 		return (ft_puterror("Init Texture Error"));
-	if (parsing_map(core))
-		return (ft_puterror("Parsing file map error"));
 	if (parsing_map(core))
 		return (ft_puterror("Parsing file map error"));
 	if (!is_map_closed(core->map->map))

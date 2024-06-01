@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:24:43 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/17 13:56:50 by maxborde         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:02:53 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,8 @@ void	convert_to_hex(uint32_t *texture_map, uint8_t *pixels, int width, int heigh
 
 uint32_t	*get_texture_map(t_core *core, char *path)
 {
-	uint32_t	*texture_map;
-	mlx_texture_t *texture;
+	uint32_t		*texture_map;
+	mlx_texture_t	*texture;
 
 	texture = mlx_load_png(path);
 	free(path);
@@ -61,7 +61,7 @@ uint32_t	*get_texture_map(t_core *core, char *path)
 	core->img->text_width = texture->width;
 	printf("TEXT HEIGHT = %d\n", core->img->text_height);
 	printf("TEXT WIDTH = %d\n", core->img->text_width);
-	free(texture);
+	mlx_delete_texture(texture);
 	return (texture_map);
 }
 

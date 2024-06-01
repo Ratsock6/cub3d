@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 13:50:14 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/31 15:44:44 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:11:18 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,19 +18,14 @@ static void	free_all(t_core *core)
 	free(core->map);
 	free(core->img->floor);
 	free(core->img->celling);
+	free(core->img->text_map_east);
+	free(core->img->text_map_north);
+	free(core->img->text_map_south);
+	free(core->img->text_map_west);
 	free(core->img);
 	free(core->player);
 	if (core->mlx)
 		mlx_terminate(core->mlx);
-}
-
-void print_texture(uint32_t *texture, int width) {
-    for (int y = 0; y < 4; y++) { // print first 4 rows
-        for (int x = 0; x < width; x++) {
-            printf("%08x ", texture[y * width + x]);
-        }
-        printf("\n");
-    }
 }
 
 int	main(int argc, char **argv)
