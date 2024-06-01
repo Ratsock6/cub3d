@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/01 20:45:43 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 21:32:30 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,19 @@ typedef struct s_norm_fill
 	int		hit;
 	int		side;
 }		t_norm_fill;
+
+typedef struct s_norm_draw
+{
+	int			line_height;
+	int			draw_end;
+	int			draw_start;
+	uint32_t	*texture_map;
+	int			tex_x;
+	int			tex_y;
+	int			dist_to_top;
+	int			y;
+	uint32_t	color;
+}		t_norm_draw;
 
 typedef struct s_img
 {
@@ -148,6 +161,7 @@ void	render_minmap(void *param);
 void	init_minmap(t_core *core);
 void	render(t_core *core);
 void	fill_raycast(double ray_dir_x, double ray_dir_y, t_core *core);
+void	draw_column(t_core *core, int x);
 
 //MOVE
 void	move_back(t_core *core);
