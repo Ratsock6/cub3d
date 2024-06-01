@@ -76,6 +76,8 @@ typedef struct s_raycast
 	int			side; // 0 for vertical, 1 for horizontal
 	double		wall_x;
 	mlx_image_t	*image;
+	double	ray_dir_x;
+	double	ray_dir_y;
 }	t_raycast;
 
 typedef struct s_player
