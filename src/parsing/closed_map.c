@@ -42,19 +42,17 @@ void	fill_with_spaces(char *line, int len)
 
 bool	check_cell(char **map, int i, int j)
 {
-	//If a cell is on the left extremity or the top extremity, or (i == 0, j == 0)),
-	//we have to check if the next cell is a 0 (the next cell is the one below for the top row,
-	//the one above for the bottom row, the one of the left for the right row, the one on the right for 
-	//the left row.
+	//If a cell is on the left extremity or the top extremity, or (i == 0, j == 0)), it can't be a 0
 	
 	//For cells that are not on the above extremities, we just check if the cell is a 0, and it it is, we check
 	//the 4 cells surrouding it. It can't be a NULL character, if it is, it means the map is not closed.
 	if (i == 0)
-		if (map[i+1] && map[i+1][j] != '1' && map[i][j] == '0')
+		if (map[i][j] == '0')
 			return (false);
 	if (j == 0)
-		if (map[i][j+1] && map[i][j+1] != '1' && map[i][j] == '0')
+		if (map[i][j] == '0')
 			return (false);
+	printf("YY\n");
 	if (map[i + 1] && (map[i + 1][j] == '0' || map[i + 1][j] == '1')
 		&& map[i - 1] && (map[i - 1][j] == '0' || map[i - 1][j] == '1')
 		&& map[i][j + 1] && (map[i][j + 1] == '0' || map[i][j + 1] == '1')

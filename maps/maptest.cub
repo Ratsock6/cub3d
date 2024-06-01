@@ -1,7 +1,7 @@
-NO texture/north.png
-SO texture/south.png
-WE texture/west.png
-EA texture/east.png
+NO texture/north_test.png
+SO texture/south_test.png
+WE texture/west_test.png
+EA texture/east_test.png
 F 255,200,200
 C 255,255,250
 
