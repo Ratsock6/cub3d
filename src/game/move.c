@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 12:37:08 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/31 11:45:37 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/05/31 17:37:21 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,23 @@
 
 void	move_foward(t_core *core)
 {
-	if (core->map->map[(int) core->player->pos_y][(int) (core->player->pos_x \
-		+ core->player->dirX * PLAYER_SPEED)] == '0')
-		core->player->pos_x += core->player->dirX * PLAYER_SPEED;
-	if (core->map->map[(int) (core->player->pos_y + core->player->dirY \
+	if (core->map->map[(int) core->player->pos_y][(int)(core->player->pos_x \
+		+ core->player->dir_x * PLAYER_SPEED)] == '0')
+		core->player->pos_x += core->player->dir_x * PLAYER_SPEED;
+	if (core->map->map[(int)(core->player->pos_y + core->player->dir_y \
 		* PLAYER_SPEED)][(int) core->player->pos_x] == '0')
-		core->player->pos_y += core->player->dirY * PLAYER_SPEED;
+		core->player->pos_y += core->player->dir_y * PLAYER_SPEED;
 }
-
 
 void	move_back(t_core *core)
 {
-	if (core->map->map[(int) core->player->pos_y][(int) (core->player->pos_x \
-		- core->player->dirX * PLAYER_SPEED)] == '0')
-		core->player->pos_x -= core->player->dirX * PLAYER_SPEED;
-	if (core->map->map[(int) (core->player->pos_y - core->player->dirY \
+	if (core->map->map[(int) core->player->pos_y][(int)(core->player->pos_x \
+		- core->player->dir_x * PLAYER_SPEED)] == '0')
+		core->player->pos_x -= core->player->dir_x * PLAYER_SPEED;
+	if (core->map->map[(int)(core->player->pos_y - core->player->dir_y \
 		* PLAYER_SPEED)][(int) core->player->pos_x] == '0')
-		core->player->pos_y -= core->player->dirY * PLAYER_SPEED;
+		core->player->pos_y -= core->player->dir_y * PLAYER_SPEED;
 }
-
 
 void	move_right(t_core *core)
 {
@@ -46,18 +44,17 @@ void	move_left(t_core *core)
 
 void	rotate_player(t_core *core, double angle)
 {
-	double	oldDirX;
-	double	oldPlaneX;
+	double	old_dir_x;
+	double	old_plane_x;
 
-	oldDirX = core->player->dirX;
-	core->player->dirX = core->player->dirX * cos(angle) \
-		- core->player->dirY * sin(angle);
-	core->player->dirY = oldDirX * sin(angle) + core->player->dirY * cos(angle);
-	
-	oldPlaneX = core->player->planeX;
-	core->player->planeX = core->player->planeX * \
-		cos(angle) - core->player->planeY * sin(angle);
-	core->player->planeY = oldPlaneX * sin(angle) + \
-		core->player->planeY * cos(angle);
-	//printf("NEW DIRECTION : PLAYE Y = %f     PLANE X = %f\n", core->player->planeY, core->player->planeX);
+	old_dir_x = core->player->dir_x;
+	core->player->dir_x = core->player->dir_x * cos(angle) \
+		- core->player->dir_y * sin(angle);
+	core->player->dir_y = old_dir_x * sin(angle) + core->player->dir_y \
+		* cos(angle);
+	old_plane_x = core->player->plane_x;
+	core->player->plane_x = core->player->plane_x * \
+		cos(angle) - core->player->plane_y * sin(angle);
+	core->player->plane_y = old_plane_x * sin(angle) + \
+		core->player->plane_y * cos(angle);
 }

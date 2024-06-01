@@ -15,6 +15,7 @@ LIBFT		= $(FT)/libft.a
 SRC 		= src/main.c \
 				src/parsing/error.c \
 				src/parsing/parsing_data.c \
+				src/parsing/closed_map.c \
 				src/parsing/parsing_map.c \
 				src/parsing/init.c \
 				src/parsing/init_texture.c \
