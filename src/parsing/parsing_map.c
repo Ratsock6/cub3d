@@ -50,13 +50,21 @@ static int	add_line_to_map(char *line, t_core *core)
 	return (0);
 }
 
-void	init_plane(t_core *core, double plane_x, double plane_y \
-	, double dir_x, double dir_y)
+int	init_plane(t_core *core, char direction)
 {
-	core->player->dir_y = dir_y;
-	core->player->dir_x = dir_x;
-	core->player->plane_x = plane_x;
-	core->player->plane_y = plane_y;
+	if (direction == 'N')
+		return (core->player->dir_y = -1, core->player->dir_x = 0,
+			core->player->plane_x = 0.66, core->player->plane_y = 0);
+	if (direction == 'S')
+		return (core->player->dir_y = 1, core->player->dir_x = 0,
+			core->player->plane_x = -0.66, core->player->plane_y = 0);
+	if (direction == 'E')
+		return (core->player->dir_y = 0, core->player->dir_x = 1,
+			core->player->plane_x = 0, core->player->plane_y = 0.66);
+	if (direction == 'W')
+		return (core->player->dir_y = 0, core->player->dir_x = -1,
+			core->player->plane_x = 0, core->player->plane_y = -0.66);
+	return (0);
 }
 
 static int	where_is_player(char *line, t_core *core, int y, int x)
@@ -73,14 +81,7 @@ static int	where_is_player(char *line, t_core *core, int y, int x)
 		core->player->pos_x = x + 0.5;
 		core->player->dir_y = 0;
 		core->pos[Y] = 1;
-		if (core->map->map[y][x] == 'N')
-			init_plane(core, 0.66, 0, 0, -1);
-		if (core->map->map[y][x] == 'S')
-			init_plane(core, -0.66, 0, 0, 1);
-		if (core->map->map[y][x] == 'E')
-			init_plane(core, 0, 0.66, 1, 0);
-		if (core->map->map[y][x] == 'W')
-			init_plane(core, 0, -0.66, -1, 0);
+		init_plane(core, core->map->map[y][x]);
 		core->map->map[y][x] = '0';
 	}
 	return (0);
