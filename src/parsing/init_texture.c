@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:24:43 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/01 20:02:53 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:17:20 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,21 +31,6 @@ static void	init_floor(t_core *core)
 	mlx_fill_image(core->img->min_map_floor, 0, 0, 0);
 }
 
-int get_rgba(int r, int g, int b, int a) {
-    return (r << 24 | g << 16 | b << 8 | a);
-}
-
-void	convert_to_hex(uint32_t *texture_map, uint8_t *pixels, int width, int height)
-{
-	for (int i = 0; i < width * height; i++) {
-		int r = pixels[i * 4];
-		int g = pixels[i * 4 + 1];
-		int b = pixels[i * 4 + 2];
-		int a = pixels[i * 4 + 3];
-		texture_map[i] = get_rgba(r, g, b, a);
-	}
-}
-
 uint32_t	*get_texture_map(t_core *core, char *path)
 {
 	uint32_t		*texture_map;
@@ -56,7 +41,8 @@ uint32_t	*get_texture_map(t_core *core, char *path)
 	if (texture == NULL)
 		return (NULL);
 	texture_map = malloc(sizeof(uint32_t) * (texture->width * texture->height));
-	convert_to_hex(texture_map, texture->pixels, texture->width, texture->height);
+	convert_to_hex(texture_map, texture->pixels, \
+		texture->width, texture->height);
 	core->img->text_height = texture->height;
 	core->img->text_width = texture->width;
 	printf("TEXT HEIGHT = %d\n", core->img->text_height);
