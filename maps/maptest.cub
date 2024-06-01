@@ -1,0 +1,14 @@
+NO texture/north_test.png
+SO texture/south_test.png
+WE texture/west_test.png
+EA texture/east_test.png
+F 255,200,200
+C 255,255,250
+
+11111111
+100S0111
+10001
+10000111
+11111111
+10000001
+11111111

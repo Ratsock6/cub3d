@@ -28,7 +28,7 @@
 # define X 1
 # define SIZE_HEIGHT 1000
 # define SIZE_WIDTH 1900
-# define SIZE_CUBE 16
+# define SIZE_CUBE 32
 # define PLAYER_SPEED 0.1
 # define ROT_SPEED 0.05
 
@@ -49,22 +49,24 @@ typedef struct s_rgb
 	int	b;
 }		t_rgb;
 
-typedef struct s_texture
+typedef struct s_img
 {
 	char			*path_north;
-	mlx_image_t		*img_north;
+	uint32_t		*text_map_north;
 	char			*path_south;
-	mlx_image_t		*img_south;
+	uint32_t		*text_map_south;
 	char			*path_east;
-	mlx_image_t		*img_east;
+	uint32_t		*text_map_east;
 	char			*path_west;
-	mlx_image_t		*img_west;
+	uint32_t		*text_map_west;
 	t_rgb			*floor;
 	t_rgb			*celling;
 	mlx_image_t		*min_map_player;
 	mlx_image_t		*min_map_cube;
 	mlx_image_t		*min_map_floor;
-}		t_texture;
+	int	text_height;
+	int	text_width;
+}		t_img;
 
 typedef struct s_raycast
 {
@@ -72,6 +74,7 @@ typedef struct s_raycast
 	double		y;
 	double		dist;
 	int			side; // 0 for vertical, 1 for horizontal
+	double	wallX;
 	mlx_image_t	*image;
 }	t_raycast;
 
@@ -89,7 +92,7 @@ typedef struct s_player
 typedef struct s_core
 {
 	t_map		*map;
-	t_texture	*img;
+	t_img	*img;
 	mlx_t		*mlx;
 	double		pos[2];
 	char		**tmp_map;
@@ -97,6 +100,11 @@ typedef struct s_core
 	t_player	*player;
 	t_raycast	raycast;
 }				t_core;
+//RENDERING
+void	rendering(t_core *core);
+void	rendering_test(t_core *core);
+//CHECKING
+bool	is_map_closed(char **map);
 
 //PARSING
 int		check_error(int argc, char **argv);

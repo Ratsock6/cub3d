@@ -71,37 +71,84 @@ void	fill_raycast(double rayDirX, double rayDirY, t_core *core)
 	if (side == 0)
 		perp_wall_dist = (map_x - core->player->pos_x + (1 - step_x) / 2) / rayDirX;
 	else
-		perp_wall_dist = (map_y - core->player->pos_y + (1 - step_y) / 2) / rayDirY;
-	core->raycast.x = map_x;
-	core->raycast.y = map_y;
-	core->raycast.dist = perp_wall_dist;
+		perpWallDist = (mapY - core->player->pos_y + (1 - stepY) / 2) / rayDirY;
+
+	double wallX;
+	// printf("PLAYER Y = %lf\n", core->player->pos_y);
+	// printf("PLAYER X = %lf\n", core->player->pos_x);
+	if (side == 0) {
+		wallX = core->player->pos_y + perpWallDist * rayDirY;
+	} else {
+		wallX = core->player->pos_x + perpWallDist * rayDirX;
+	}
+	wallX -= floor(wallX);
+	core->raycast.x = mapX;
+	core->raycast.y = mapY;
+	core->raycast.dist = perpWallDist;
 	core->raycast.side = side;
+	core->raycast.wallX = wallX;
+	//printf("WALL X = %lf\n", wallX);
 }
 
-void	draw_column(int x, t_core *core)
-{
-	int			line_height;
-	int			draw_start;
-	int			draw_end;
-	uint32_t	color;
-	int			y;
+void draw_column(int x, t_core *core) {
+	printf("TEXT WIDTH = %d\n", core->img->text_width);
+	int line_height; 
+	int draw_end;
+	int draw_start;
+	uint32_t* texture_map;
+	int	texX;
 
-	line_height = (int)(core->map->screen_height / core->raycast.dist);
-	draw_start = -line_height / 2 + core->map->screen_height / 2;
-	draw_end = line_height / 2 + core->map->screen_height / 2;
-	if (draw_start < 0)
+	line_height = (int)(core->map->screen_height / core->raycast.dist); //La taille du wall, grace a raycast.dist et la taille de l'ecra
+	draw_start = -line_height / 2 + core->map->screen_height / 2; //Le point de depart pour dessiner le wall (sur l'axe y)
+	draw_end = line_height / 2 + core->map->screen_height / 2; // Le point de fin pour le wall (sur l'axe y)
+	//Les lignes en dessous servent a  s'assurer que draw_start et draw_end ne soit pas soit negatif soit plus grand que la taille de l'ecran car on ne peut pas commencer dessiner a -300 ou a plus que la taille de l'ecran.  On arrive souvent a des valeurs de ce genre si on se colle au mur.
+	if (draw_start < 0) 
 		draw_start = 0;
-	if (draw_end >= core->map->screen_height)
+	if (draw_end >= core->map->screen_height) 
 		draw_end = core->map->screen_height - 1;
-	if (core->raycast.side == 1)
-		color = 0xAAAAAAFF;
-	else
-		color = 0xFFFFFFFF;
-	y = draw_start;
-	while (y < draw_end)
-	{
+
+
+	//Les lignes en dessous vont nous permettre de calculer les coordonnes de la texture sur l'axe X.
+	//Imaginons un carre de 32x32 representant notre texture. On a wallX qui est une valeur de 0 a 1 representant
+	//l'endroit ou le ray a touche une case sur l'axe X (0 si il a hit l'extreme gauche de la case, 0.5 au milieu, 1
+	//si c'est l'extreme droite ect. On va donc prendre wallX et le multiplier par la largeur de notre texture (ici 32)
+	//pour trouver le pixel sur l'axe X que l'on veut afficher.
+	texX = (int)(core->raycast.wallX * (double)core->img->text_width);
+	texX =core->img->text_width - texX - 1;
+	// On s'assure que texX reste entre 0 et 31 pour ne pas aller chercher un pixel qui n'existe pas
+	if (texX < 0) 
+		texX = 0;
+	if (texX >=core->img->text_width) 
+		texX =core->img->text_width - 1;
+
+	//Ici, on utilise side (side == 0 veut dire qu'on a touche un mur verticalement alors que side == 1 veut dire qu'on a touche un mur horizontal) et raycast.x et raycast.y qu'on a calcule dans le raycast pour choisir quelle texture_map choisir avant de recuperer les pixel.
+	//raycast.x et raycast.y sont les coordonnes  de l'endroit ou le rayon a hit le wall, sur leur axes respectifs.
+	//Par exemple, si le joueur regarde tout droit vers le nord, raycast.x est a 0 et raycast.y est a -1 (et sera 1 si on regarde tout 
+	//droit vers le sud)
+	//Grace a cette logique on peut determiner laquelle des 4 textures on doit choisir pour dessiner notre bout de mur.
+	if (core->raycast.side == 0) {
+		if (core->raycast.x > 0)
+			texture_map = core->img->text_map_east;
+		else
+			texture_map = core->img->text_map_west;
+	} else {
+		if (core->raycast.y > 0)
+			texture_map = core->img->text_map_south;
+		else
+			texture_map = core->img->text_map_north;
+	}
+
+	//Grace a tout ces calculs, on peut enfin dessiner la colonne. 
+	//On utilise bien sur draw_start et draw_end pour la taille de la colonne.
+	//Pour choisir le pixel sur l'axe Y de la texture_map on va calculer texY, et on va s'aider de distToTop qui est distance du haut de l'ecran jusqu'au pixel actuel qui va etre dessine. cette variable est multiplie par 256 pour la precision, mais sera redivise par 256 quand on calculera texY.
+	for (int y = draw_start; y < draw_end; y++) {
+		int distToTop = y * 256 - core->map->screen_height * 128 + line_height * 128;
+		int texY = ((distToTop * core->img->text_width) / line_height) / 256;
+		uint32_t color = texture_map[core->img->text_width * texY + texX];
+		//Grace a ces calculs, on peut enfin pick le pixel dans la texture_map. Si side == 1, donc que le mur est vertical, on l'assombrit un petit peu.
+		if (core->raycast.side == 1) 
+			color = (color >> 1) & 8355711;
 		mlx_put_pixel(core->raycast.image, x, y, color);
-		y++;
 	}
 }
 

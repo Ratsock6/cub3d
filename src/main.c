@@ -24,6 +24,15 @@ static void	free_all(t_core *core)
 		mlx_terminate(core->mlx);
 }
 
+void print_texture(uint32_t *texture, int width) {
+    for (int y = 0; y < 4; y++) { // print first 4 rows
+        for (int x = 0; x < width; x++) {
+            printf("%08x ", texture[y * width + x]);
+        }
+        printf("\n");
+    }
+}
+
 int	main(int argc, char **argv)
 {
 	t_core	core;

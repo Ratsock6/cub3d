@@ -55,7 +55,7 @@ static int	init_var(t_core *core)
 {
 	core->map = ft_calloc(1, sizeof(t_map));
 	core->player = ft_calloc(1, sizeof(t_player));
-	core->img = ft_calloc(1, sizeof(t_texture));
+	core->img = ft_calloc(1, sizeof(t_img));
 	core->img->celling = ft_calloc(1, sizeof(t_rgb));
 	core->img->floor = ft_calloc(1, sizeof(t_rgb));
 	core->mlx = NULL;
