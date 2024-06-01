@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/01 15:52:47 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 16:31:55 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ typedef struct s_raycast
 	double		y;
 	double		dist;
 	int			side; // 0 for vertical, 1 for horizontal
-	double	wallX;
+	double		wall_x;
 	mlx_image_t	*image;
 }	t_raycast;
 

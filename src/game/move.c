@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/22 12:37:08 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/31 17:37:21 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 17:16:18 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,28 @@ void	move_back(t_core *core)
 
 void	move_right(t_core *core)
 {
-	(void) core;
+	double	move_x;
+	double	move_y;
+
+	move_x = core->player->plane_x * PLAYER_SPEED;
+	move_y = core->player->plane_y * PLAYER_SPEED;
+	if (core->map->map[(int)(core->player->pos_y + move_y)][(int)(core->player->pos_x + move_x)] == '0') {
+		core->player->pos_x += move_x;
+		core->player->pos_y += move_y;
+	}
 }
 
 void	move_left(t_core *core)
 {
-	(void) core;
+	double	move_x;
+	double	move_y;
+
+	move_x = -core->player->plane_x * PLAYER_SPEED;
+	move_y = -core->player->plane_y * PLAYER_SPEED;
+	if (core->map->map[(int)(core->player->pos_y + move_y)][(int)(core->player->pos_x + move_x)] == '0') {
+		core->player->pos_x += move_x;
+		core->player->pos_y += move_y;
+	}
 }
 
 void	rotate_player(t_core *core, double angle)
