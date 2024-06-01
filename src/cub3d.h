@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/01 20:23:57 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:29:20 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,8 @@ typedef struct s_img
 	mlx_image_t		*min_map_player;
 	mlx_image_t		*min_map_cube;
 	mlx_image_t		*min_map_floor;
-	int	text_height;
-	int	text_width;
+	int				text_height;
+	int				text_width;
 }		t_img;
 
 typedef struct s_raycast
@@ -76,8 +76,8 @@ typedef struct s_raycast
 	int			side; // 0 for vertical, 1 for horizontal
 	double		wall_x;
 	mlx_image_t	*image;
-	double	ray_dir_x;
-	double	ray_dir_y;
+	double		ray_dir_x;
+	double		ray_dir_y;
 }	t_raycast;
 
 typedef struct s_player
@@ -94,7 +94,7 @@ typedef struct s_player
 typedef struct s_core
 {
 	t_map		*map;
-	t_img	*img;
+	t_img		*img;
 	mlx_t		*mlx;
 	double		pos[2];
 	char		**tmp_map;
