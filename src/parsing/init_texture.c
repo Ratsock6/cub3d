@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:24:43 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/01 20:17:20 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 22:02:36 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,6 @@ uint32_t	*get_texture_map(t_core *core, char *path)
 		texture->width, texture->height);
 	core->img->text_height = texture->height;
 	core->img->text_width = texture->width;
-	printf("TEXT HEIGHT = %d\n", core->img->text_height);
-	printf("TEXT WIDTH = %d\n", core->img->text_width);
 	mlx_delete_texture(texture);
 	return (texture_map);
 }
