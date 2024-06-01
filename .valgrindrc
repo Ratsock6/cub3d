@@ -1,2 +1,3 @@
 --keep-debuginfo=yes
+--leak-check=full
 --suppressions=minilibx/mlx42.supp
