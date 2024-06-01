@@ -6,17 +6,16 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:30:12 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/15 17:47:25 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 20:25:27 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 
-static void	rgb(t_rgb *rgb, char **values)
+static void	free_put_value(char **split, char *tmp)
 {
-	rgb->r = ft_atoi(values[0]);
-	rgb->g = ft_atoi(values[1]);
-	rgb->b = ft_atoi(values[2]);
+	free(tmp);
+	free_str_tab(split);
 }
 
 static void	reform(char *str, bool new_line)
@@ -72,8 +71,7 @@ static int	put_value_rgb(char *str, t_core *core)
 		rgb(core->img->floor, split);
 	if (str[0] == 'C' && str[1] == ' ')
 		rgb(core->img->celling, split);
-	free(tmp);
-	free_str_tab(split);
+	free_put_value(split, tmp);
 	return (0);
 }
 

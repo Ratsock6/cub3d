@@ -24,6 +24,7 @@ SRC 		= src/main.c \
 				src/utils/mlx_fill_image.c \
 				src/utils/ft_len_tab.c \
 				src/utils/convert_to_hex.c \
+				src/utils/rgb.c \
 				src/game/start.c \
 				src/game/minmap_manager.c \
 				src/game/move.c \
