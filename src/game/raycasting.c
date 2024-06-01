@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/30 13:55:44 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/31 15:43:43 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 15:51:27 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,20 +71,20 @@ void	fill_raycast(double rayDirX, double rayDirY, t_core *core)
 	if (side == 0)
 		perp_wall_dist = (map_x - core->player->pos_x + (1 - step_x) / 2) / rayDirX;
 	else
-		perpWallDist = (mapY - core->player->pos_y + (1 - stepY) / 2) / rayDirY;
+		perp_wall_dist = (map_y - core->player->pos_y + (1 - step_y) / 2) / rayDirY;
 
 	double wallX;
 	// printf("PLAYER Y = %lf\n", core->player->pos_y);
 	// printf("PLAYER X = %lf\n", core->player->pos_x);
 	if (side == 0) {
-		wallX = core->player->pos_y + perpWallDist * rayDirY;
+		wallX = core->player->pos_y + perp_wall_dist * rayDirY;
 	} else {
-		wallX = core->player->pos_x + perpWallDist * rayDirX;
+		wallX = core->player->pos_x + perp_wall_dist * rayDirX;
 	}
 	wallX -= floor(wallX);
-	core->raycast.x = mapX;
-	core->raycast.y = mapY;
-	core->raycast.dist = perpWallDist;
+	core->raycast.x = map_x;
+	core->raycast.y = map_y;
+	core->raycast.dist = perp_wall_dist;
 	core->raycast.side = side;
 	core->raycast.wallX = wallX;
 	//printf("WALL X = %lf\n", wallX);

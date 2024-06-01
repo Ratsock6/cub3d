@@ -19,7 +19,6 @@ SRC 		= src/main.c \
 				src/parsing/parsing_map.c \
 				src/parsing/init.c \
 				src/parsing/init_texture.c \
-				src/parsing/closed_map.c \
 				src/utils/ft_puterror.c \
 				src/utils/ft_pixel.c \
 				src/utils/mlx_fill_image.c \

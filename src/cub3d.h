@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/05/31 17:42:14 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/01 15:52:47 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,8 +103,6 @@ typedef struct s_core
 //RENDERING
 void	rendering(t_core *core);
 void	rendering_test(t_core *core);
-//CHECKING
-bool	is_map_closed(char **map);
 
 //PARSING
 int		check_error(int argc, char **argv);
