@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/02 16:41:00 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/02 17:26:21 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 # define X 1
 # define SIZE_HEIGHT 1000
 # define SIZE_WIDTH 1900
-# define SIZE_CUBE 32
+# define SIZE_CUBE 16
 # define PLAYER_SPEED 0.1
 # define ROT_SPEED 0.05
 
@@ -92,7 +92,9 @@ typedef struct s_img
 	t_rgb			*celling;
 	mlx_image_t		*min_map_player;
 	mlx_image_t		*min_map_cube;
+	size_t			floor_count;
 	mlx_image_t		*min_map_floor;
+	size_t			wall_count;
 	mlx_image_t		*img_pause;
 	int				text_height;
 	int				text_width;
@@ -166,7 +168,7 @@ void	render(t_core *core);
 void	fill_raycast(double ray_dir_x, double ray_dir_y, t_core *core);
 void	draw_column(t_core *core, int x);
 void	toggle_pause(t_core *core);
-void	game_pause(t_core *core);
+void	init_mini_map(t_core *core);
 
 //MOVE
 void	move_back(t_core *core);

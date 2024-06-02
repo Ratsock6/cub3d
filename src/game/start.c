@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 13:48:24 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/02 16:52:35 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/02 18:26:57 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,7 @@ void	start(t_core *core)
 	t_raycast	raycast;
 
 	core->is_pause = false;
+	init_mini_map(core);
 	mlx_set_cursor_mode(core->mlx, MLX_MOUSE_HIDDEN);
 	mlx_set_mouse_pos(core->mlx, core->map->screen_width / 2,
 		core->map->screen_height / 2);
