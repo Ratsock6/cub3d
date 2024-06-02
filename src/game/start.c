@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 13:48:24 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/01 17:16:32 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/02 14:48:51 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	mouse_control(void *param)
 	y = 0;
 	core = param;
 	mlx_get_mouse_pos(core->mlx, &x, &y);
+	if (!core->is_mouse)
+		return ;
 	if (x > core->map->screen_width / 2 + 5)
 	{
 		mlx_set_mouse_pos(core->mlx, core->map->screen_width / 2,
@@ -68,10 +70,26 @@ void	resize(int width, int height, void *param)
 	render(core);
 }
 
+void	ft_key_hook(mlx_key_data_t keys, void *param)
+{
+	t_core	*core;
+
+	core = param;
+	if (keys.key == MLX_KEY_F && keys.action == MLX_PRESS)
+	{
+		if (core->is_mouse)
+			mlx_set_cursor_mode(core->mlx, MLX_MOUSE_NORMAL);
+		else
+			mlx_set_cursor_mode(core->mlx, MLX_MOUSE_HIDDEN);
+		core->is_mouse = !core->is_mouse;
+	}
+}
+
 void	start(t_core *core)
 {
 	t_raycast	raycast;
 
+	core->is_mouse = true;
 	mlx_set_cursor_mode(core->mlx, MLX_MOUSE_HIDDEN);
 	mlx_set_mouse_pos(core->mlx, core->map->screen_width / 2,
 		core->map->screen_height / 2);
@@ -82,6 +100,7 @@ void	start(t_core *core)
 	mlx_resize_hook(core->mlx, resize, core);
 	mlx_loop_hook(core->mlx, ft_hook, core);
 	mlx_loop_hook(core->mlx, mouse_control, core);
+	mlx_key_hook(core->mlx, ft_key_hook, core);
 	render(core);
 	mlx_loop(core->mlx);
 }
