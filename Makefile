@@ -28,6 +28,7 @@ SRC 		= src/main.c \
 				src/utils/rgb.c \
 				src/game/start.c \
 				src/game/fill_raycasting.c \
+				src/game/init_mini_map.c \
 				src/game/pause.c \
 				src/game/draw_colum.c \
 				src/game/move.c \

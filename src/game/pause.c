@@ -6,54 +6,11 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/02 16:14:54 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/02 18:27:10 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/02 18:36:01 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
-
-void	init_mini_map(t_core *core)
-{
-	size_t	y;
-	size_t	x;
-	size_t	floor_count;
-	size_t	wall_count;
-
-	y = -1;
-	floor_count = 0;
-	wall_count = 0;
-	while (++y <= core->map->height)
-	{
-		x = -1;
-		while (++x <= core->map->width)
-		{
-			if (x >= ft_strlen(core->map->map[y]))
-			{
-				mlx_image_to_window(core->mlx, core->img->min_map_floor, \
-					x * SIZE_CUBE, y * SIZE_CUBE);
-				core->img->min_map_floor->instances[floor_count].enabled = false;
-				floor_count++;
-				continue ;
-			}
-			if (core->map->map[y][x] == '1')
-			{
-				mlx_image_to_window(core->mlx, core->img->min_map_cube, \
-					x * SIZE_CUBE, y * SIZE_CUBE);
-				core->img->min_map_cube->instances[wall_count].enabled = false;
-				wall_count++;
-			}
-			if (core->map->map[y][x] == '0' || core->map->map[y][x] == ' ')
-			{
-				mlx_image_to_window(core->mlx, core->img->min_map_floor, \
-					x * SIZE_CUBE, y * SIZE_CUBE);
-				core->img->min_map_floor->instances[floor_count].enabled = false;
-				floor_count++;
-			}
-		}
-	}
-	core->img->wall_count = wall_count;
-	core->img->floor_count = floor_count;
-}
 
 static void	delete_mini_map(t_core *core)
 {

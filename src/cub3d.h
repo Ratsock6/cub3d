@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/02 17:26:21 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/02 18:42:29 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 # define X 1
 # define SIZE_HEIGHT 1000
 # define SIZE_WIDTH 1900
-# define SIZE_CUBE 16
+# define SIZE_CUBE 20
 # define PLAYER_SPEED 0.1
 # define ROT_SPEED 0.05
 
