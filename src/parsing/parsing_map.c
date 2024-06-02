@@ -98,13 +98,16 @@ int	parsing_map(t_core *core)
 		line = get_next_line(core->map->fd);
 		if (line == NULL)
 			break ;
-		if (ft_isonly(line, "\n"))
+		// if (ft_isonly(line, "\n"))
+		// {
+		// 	free(line);
+		// 	continue ;
+		// }
+		if (add_line_to_map(line, core))
 		{
 			free(line);
-			continue ;
-		}
-		if (add_line_to_map(line, core))
 			return (1);
+		}
 		if (where_is_player(line, core, y, 0))
 			return (1);
 		core->map->height = y;
