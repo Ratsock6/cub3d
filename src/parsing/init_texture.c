@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/15 11:24:43 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/01 22:02:36 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/02 16:30:56 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,9 @@ int	init_texture(t_core *core)
 	core->img->text_map_south = get_texture_map(core, core->img->path_south);
 	core->img->text_map_east = get_texture_map(core, core->img->path_east);
 	core->img->text_map_west = get_texture_map(core, core->img->path_west);
+	core->img->img_pause = mlx_put_string(core->mlx, "PAUSE", \
+		SIZE_WIDTH / 2, SIZE_HEIGHT / 2);
+	core->img->img_pause->instances[0].enabled = false;
 	init_player(core);
 	init_wall(core);
 	init_floor(core);

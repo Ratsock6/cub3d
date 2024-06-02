@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/02 15:58:24 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/02 16:41:00 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,6 +93,7 @@ typedef struct s_img
 	mlx_image_t		*min_map_player;
 	mlx_image_t		*min_map_cube;
 	mlx_image_t		*min_map_floor;
+	mlx_image_t		*img_pause;
 	int				text_height;
 	int				text_width;
 }		t_img;
@@ -130,7 +131,7 @@ typedef struct s_core
 	int			debug;
 	t_player	*player;
 	t_raycast	raycast;
-	bool		is_mouse;
+	bool		is_pause;
 }				t_core;
 //RENDERING
 void	rendering(t_core *core);
@@ -164,6 +165,8 @@ void	init_minmap(t_core *core);
 void	render(t_core *core);
 void	fill_raycast(double ray_dir_x, double ray_dir_y, t_core *core);
 void	draw_column(t_core *core, int x);
+void	toggle_pause(t_core *core);
+void	game_pause(t_core *core);
 
 //MOVE
 void	move_back(t_core *core);
