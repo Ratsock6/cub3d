@@ -13,6 +13,7 @@ FT			= libft
 LIBFT		= $(FT)/libft.a
 
 SRC 		= src/main.c \
+				src/get_next_line.c \
 				src/parsing/error.c \
 				src/parsing/parsing_data.c \
 				src/parsing/closed_map.c \

@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/02 18:42:29 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/02 20:28:40 by maxborde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,8 @@ typedef struct s_core
 	t_raycast	raycast;
 	bool		is_pause;
 }				t_core;
+
+char	*get_next_line_m(int fd);
 //RENDERING
 void	rendering(t_core *core);
 void	rendering_test(t_core *core);
