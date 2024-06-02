@@ -31,6 +31,7 @@
 # define SIZE_CUBE 20
 # define PLAYER_SPEED 0.1
 # define ROT_SPEED 0.05
+#define PLAYER_BUFFER 0.1
 
 typedef struct s_map
 {
@@ -172,7 +173,7 @@ void	init_mini_map(t_core *core);
 
 //MOVE
 void	move_back(t_core *core);
-void	move_foward(t_core *core);
+void	move_forward(t_core *core);
 void	move_right(t_core *core);
 void	move_left(t_core *core);
 void	rotate_player(t_core *core, double angle);

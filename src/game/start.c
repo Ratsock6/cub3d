@@ -52,7 +52,7 @@ void	ft_hook(void *param)
 	if (mlx_is_key_down(core->mlx, MLX_KEY_LEFT))
 		rotate_player(core, -ROT_SPEED);
 	if (mlx_is_key_down(core->mlx, MLX_KEY_W))
-		move_foward(core);
+		move_forward(core);
 	if (mlx_is_key_down(core->mlx, MLX_KEY_S))
 		move_back(core);
 	if (mlx_is_key_down(core->mlx, MLX_KEY_D))
