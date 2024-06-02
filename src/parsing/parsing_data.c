@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:30:12 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/01 20:25:27 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/02 15:59:01 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,10 +55,13 @@ static int	put_value_rgb(char *str, t_core *core)
 		return (0);
 	tmp = ft_strdup(str + 2);
 	reform(tmp, false);
+	printf("TEST |%s|\n", tmp);
+	remove_spaces(tmp);
+	printf("TEST 2 |%s|\n", tmp);
 	if (ft_strlen(tmp) > 11)
 	{
 		free(tmp);
-		return (ft_puterror("RGB values (1)"));
+		return (ft_puterror("RGB values line too long"));
 	}
 	split = ft_split(tmp, ',');
 	if (ft_len_tab(split) != 3)

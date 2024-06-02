@@ -20,6 +20,7 @@ SRC 		= src/main.c \
 				src/parsing/init.c \
 				src/parsing/init_texture.c \
 				src/utils/ft_puterror.c \
+				src/utils/remove_space.c \
 				src/utils/ft_pixel.c \
 				src/utils/mlx_fill_image.c \
 				src/utils/ft_len_tab.c \

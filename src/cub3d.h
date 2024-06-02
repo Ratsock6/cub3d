@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/02 14:43:15 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/02 15:58:24 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,6 +155,7 @@ void	mlx_fill_image(mlx_image_t *img, int32_t r, int32_t g, int32_t b);
 void	mlx_fill_floor(mlx_image_t *img, int32_t r, int32_t g, int32_t b);
 void	rgb(t_rgb *rgb, char **values);
 void	convert_to_hex(uint32_t *texture_map, uint8_t *pixels, int w, int h);
+void	remove_spaces(char *str);
 
 //GAME
 void	start(t_core *core);
