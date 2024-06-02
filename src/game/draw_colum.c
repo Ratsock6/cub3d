@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 21:25:42 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/01 21:54:00 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/02 14:40:31 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,16 +50,16 @@ static void	choose_texture(t_core *core, t_norm_draw *norm)
 	if (core->raycast.side == 0)
 	{
 		if (core->raycast.ray_dir_x > 0)
-			norm->texture_map = core->img->text_map_east;
-		else
 			norm->texture_map = core->img->text_map_west;
+		else
+			norm->texture_map = core->img->text_map_east;
 	}
 	else
 	{
 		if (core->raycast.ray_dir_y > 0)
-			norm->texture_map = core->img->text_map_south;
-		else
 			norm->texture_map = core->img->text_map_north;
+		else
+			norm->texture_map = core->img->text_map_south;
 	}
 }
 
