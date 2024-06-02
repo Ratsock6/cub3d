@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 16:24:47 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/01 22:32:25 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/02 20:32:43 by maxborde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,16 +95,19 @@ int	parsing_map(t_core *core)
 	y = 0;
 	while (1)
 	{
-		line = get_next_line(core->map->fd);
+		line = get_next_line_m(core->map->fd);
 		if (line == NULL)
-			break ;
-		if (ft_isonly(line, "\n"))
+			break;
+		// if (ft_isonly(line, "\n"))
+		// {
+		// 	free(line);
+		// 	continue ;
+		// }
+		if (add_line_to_map(line, core))
 		{
 			free(line);
-			continue ;
-		}
-		if (add_line_to_map(line, core))
 			return (1);
+		}
 		if (where_is_player(line, core, y, 0))
 			return (1);
 		core->map->height = y;

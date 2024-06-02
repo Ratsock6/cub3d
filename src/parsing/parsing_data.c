@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/14 14:30:12 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/02 16:09:28 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/02 20:32:50 by maxborde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ int	parsing_data(t_core *core)
 	i = 0;
 	while (1)
 	{
-		line = get_next_line(core->map->fd);
+		line = get_next_line_m(core->map->fd);
 		if (line == NULL)
 			break ;
 		if (ft_isonly(line, "\n"))
