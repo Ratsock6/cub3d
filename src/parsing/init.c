@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 18:24:39 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/01 20:04:37 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/03 19:17:22 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,7 @@ int	init(t_core *core, char **argv)
 		return (ft_puterror("Parsing file map error"));
 	if (!is_map_closed(core->map->map))
 		return (ft_puterror("Map is not closed"));
+	if (core->pos[Y] == -1)
+		return (ft_puterror("No player found"));
 	return (0);
 }
