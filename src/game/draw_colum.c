@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/01 21:25:42 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/02 14:40:31 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/04 14:18:54 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static void	init_draw_column(t_norm_draw *norm, t_core *core)
 	if (norm->draw_start < 0)
 		norm->draw_start = 0;
 	if (norm->draw_end >= core->map->screen_height)
-		norm->draw_end = core->map->screen_height - 1;
+		norm->draw_end = core->map->screen_height;
 	norm->tex_x = (int)(core->raycast.wall_x * (double)core->img->text_width);
 	norm->tex_x = core->img->text_width - norm->tex_x - 1;
 	if (norm->tex_x < 0)
