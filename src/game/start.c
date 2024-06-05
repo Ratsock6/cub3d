@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/21 13:48:24 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/02 18:26:57 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/05 14:00:36 by aallou-v         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ void	resize(int width, int height, void *param)
 	core = param;
 	core->map->screen_height = height;
 	core->map->screen_width = width;
-	render(core);
+	if (!core->is_pause)
+		render(core);
 }
 
 void	ft_key_hook(mlx_key_data_t keys, void *param)
