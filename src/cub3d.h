@@ -6,7 +6,7 @@
 /*   By: aallou-v <aallou-v@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/13 15:06:04 by aallou-v          #+#    #+#             */
-/*   Updated: 2024/06/04 13:56:09 by aallou-v         ###   ########.fr       */
+/*   Updated: 2024/06/05 13:06:42 by maxborde         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,6 +137,7 @@ typedef struct s_core
 	t_raycast	raycast;
 	bool		is_pause;
 }				t_core;
+
 //RENDERING
 void	rendering(t_core *core);
 void	rendering_test(t_core *core);
@@ -178,5 +179,7 @@ void	move_forward(t_core *core);
 void	move_right(t_core *core);
 void	move_left(t_core *core);
 void	rotate_player(t_core *core, double angle);
+void	perform_move_x(t_core *core, double move_x, double new_pos_x);
+void	perform_move_y(t_core *core, double move_y, double new_pos_y);
 
 #endif

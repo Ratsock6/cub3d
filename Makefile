@@ -32,6 +32,7 @@ SRC 		= src/main.c \
 				src/game/pause.c \
 				src/game/draw_colum.c \
 				src/game/move.c \
+				src/game/move_utils.c \
 				src/game/raycasting.c
 OBJ 		= $(SRC:.c=.o)
 
